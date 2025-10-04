@@ -604,101 +604,6 @@ function App({ initialPage = 'home' }) {
                     <p className="text-xl text-gray-300" style={{ fontFamily: 'Arial, sans-serif' }}>Discover our amazing events and workshops</p>
                   </div>
 
-                  {/* Past Events Section */}
-                  <div className="mb-20">
-                    <div className="text-center mb-12">
-                      <h2 className="text-5xl mb-4 font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>Past Events</h2>
-                      <p className="text-lg text-gray-400" style={{ fontFamily: 'Arial, sans-serif' }}>Highlights from our previous events</p>
-                    </div>
-
-                    <div className="flex justify-center">
-                      <div className="w-full max-w-md">
-                      {/* Event Card 1 - Tech Escape 2.0 */}
-                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300">
-                        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
-                          <div className="flex justify-between items-start mb-4">
-                            <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>✓ Event Completed Successfully</div>
-                            <div className="text-right">
-                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>14 AUG</div>
-                              <div className="text-xs font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
-                            </div>
-                          </div>
-                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>TECH ESCAPE 2.0</h3>
-                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE EVENT FOR 1ST YEAR</p>
-                          <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> August 14, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 3:00 PM - 4:45 PM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Tech Escape 2.0 - IEEE Event</h4>
-                          <p className="text-gray-600 mb-4 leading-relaxed font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.
-                          </p>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Thursday, August 14, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 03:00 PM - 04:45 PM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> 2nd Floor</span>
-                          </div>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-user-line"></i> Parth Choudhari</span>
-                          </div>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Technical</span>
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE</span>
-                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>1st Year</span>
-                          </div>
-                          <button 
-                            onClick={() => {
-                              setSelectedEvent({
-                                name: "Tech Escape 2.0",
-                                subtitle: "IEEE EVENT FOR 1ST YEAR",
-                                date: "August 14, 2025",
-                                time: "3:00 PM - 4:45 PM",
-                                location: "S-02 & S-08",
-                                day: "Thursday",
-                                contacts: [
-                                  "Dr. Bhupesh Dewangan",
-                                  "Parth Choudhari", 
-                                  "Rishab Thutheja",
-                                  "Jash Chauhan",
-                                  "Atharv Jaiswal",
-                                  "Rahul Malani",
-                                  "Ojaswini Thote",
-                                  "Sanika Jumde",
-                                  "Falguni Rinke",
-                                  "Anaya Shende",
-                                  "Pranati Tyagi",
-                                  "Sushmit Partakke",
-                                  "Jasraj Singh Ataliya",
-                                  "Yash Khadgi",
-                                  "Ayushi Ray",
-                                  "Kashish Gupta",
-                                  "Arya Khandekar",
-                                  "Tabish Mansoori",
-                                  "Sunidhi Haware",
-                                  "Arpita Waghmare"
-                                ],
-                                category: "Technical",
-                                organizer: "IEEE",
-                                target: "1st Year",
-                                description: "Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.",
-                                status: "Completed"
-                              });
-                              navigate('/event-details');
-                            }}
-                            className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg text-center font-bold hover:bg-blue-200 transition-colors duration-300 w-full" 
-                            style={{ fontFamily: 'Arial, sans-serif' }}
-                          >
-                            View Event Details
-                          </button>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
-
                   {/* Upcoming Events Section */}
                   <div>
                     <div className="text-center mb-12">
@@ -757,14 +662,14 @@ function App({ initialPage = 'home' }) {
                           <div className="flex justify-between items-start mb-4">
                             <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE STUDENT BRANCH PRESENTS</div>
                             <div className="text-right">
-                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>15 APR</div>
+                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>15 OCT</div>
                               <div className="text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
                             </div>
                           </div>
                           <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>SALESFORCE WORKSHOP</h3>
                           <p className="text-lg opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>LEARN. BUILD. DEPLOY.</p>
                           <div className="flex items-center gap-4 mt-4 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> April 15, 2025</span>
+                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 15, 2025</span>
                             <span className="flex items-center gap-1"><i className="ri-time-line"></i> 2:00 PM - 5:00 PM</span>
                             <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> SO-8 & SO-2</span>
                           </div>
@@ -791,6 +696,99 @@ function App({ initialPage = 'home' }) {
                         </div>
                       </div>
 
+                    </div>
+                  </div>
+
+                  {/* Past Events Section */}
+                  <div className="mb-20 mt-20">
+                    <div className="text-center mb-12">
+                      <h2 className="text-5xl mb-4 font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>Past Events</h2>
+                      <p className="text-lg text-gray-400" style={{ fontFamily: 'Arial, sans-serif' }}>Highlights from our previous events</p>
+                    </div>
+
+                    <div className="flex justify-center">
+                      {/* Event Card 1 - Tech Escape 2.0 */}
+                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 max-w-md w-full">
+                        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
+                          <div className="flex justify-between items-start mb-4">
+                            <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>✓ Event Completed Successfully</div>
+                            <div className="text-right">
+                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>14 AUG</div>
+                              <div className="text-xs font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
+                            </div>
+                          </div>
+                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>TECH ESCAPE 2.0</h3>
+                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE EVENT FOR 1ST YEAR</p>
+                          <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> August 14, 2025</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 3:00 PM - 4:45 PM</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
+                          </div>
+                        </div>
+                        <div className="p-6">
+                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Tech Escape 2.0 - IEEE Event</h4>
+                          <p className="text-gray-600 mb-4 leading-relaxed font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.
+                          </p>
+                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Thursday, August 14, 2025</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 03:00 PM - 04:45 PM</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i>S-02 & S-08</span>
+                          </div>
+                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <span className="flex items-center gap-1"><i className="ri-user-line"></i> Parth Choudhari</span>
+                          </div>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Technical</span>
+                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE</span>
+                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>1st Year</span>
+                          </div>
+                          <button 
+                            onClick={() => {
+                              setSelectedEvent({
+                                name: "Tech Escape 2.0",
+                                subtitle: "Ultimate Tech Adventure!",
+                                date: "August 14, 2025",
+                                time: "3:00 PM - 4:45 PM",
+                                location: "S-02 & S-08",
+                                day: "Thursday",
+                                contacts: [
+                                  "Dr. Bhupesh Dewangan",
+                                  "Parth Choudhari", 
+                                  "Rishab Thutheja",
+                                  "Jash Chauhan",
+                                  "Atharv Jaiswal",
+                                  "Rahul Malani",
+                                  "Ojaswini Thote",
+                                  "Sanika Jumde",
+                                  "Falguni Rinke",
+                                  "Anaya Shende",
+                                  "Pranati Tyagi",
+                                  "Sushmit Partakke",
+                                  "Jasraj Singh Ataliya",
+                                  "Yash Khadgi",
+                                  "Ayushi Ray",
+                                  "Kashish Gupta",
+                                  "Arya Khandekar",
+                                  "Tabish Mansoori",
+                                  "Sunidhi Haware",
+                                  "Arpita Waghmare"
+                                ],
+                                category: "Technical",
+                                organizer: "IEEE",
+                                target: "1st Year",
+                                description: "Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.",
+                                status: "Completed"
+                              });
+                              navigate('/event-details');
+                            }}
+                            className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg text-center font-bold hover:bg-blue-200 transition-colors duration-300 w-full" 
+                            style={{ fontFamily: 'Arial, sans-serif' }}
+                          >
+                            View Event Details
+                          </button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -853,24 +851,24 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-emerald-500 bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center">
-                              <span className="text-emerald-600 text-2xl font-bold">PC</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-red-500 bg-gradient-to-br from-red-100 to-rose-100 flex items-center justify-center">
+                              <span className="text-red-600 text-2xl font-bold">PC</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Parth Choudhari
                           </h3>
-                          <p className="text-emerald-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-red-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Chair
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Leading the IEEE chapter with vision and dedication to promote technology and innovation.
                           </p>
                           <div className="flex justify-center space-x-2">
-                            <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors duration-200">
+                            <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors duration-200">
                               <i className="ri-linkedin-fill text-xs"></i>
                             </a>
-                            <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition-colors duration-200">
+                            <a href="#" className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors duration-200">
                               <i className="ri-mail-line text-xs"></i>
                             </a>
                           </div>
@@ -1005,14 +1003,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-green-500 bg-gradient-to-br from-green-100 to-emerald-100 flex items-center justify-center">
-                              <span className="text-green-600 text-2xl font-bold">SJ</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center">
+                              <span className="text-yellow-600 text-2xl font-bold">SJ</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Sanika Jumde
                           </h3>
-                          <p className="text-green-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-yellow-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Event Manager
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1033,14 +1031,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-teal-500 bg-gradient-to-br from-teal-100 to-cyan-100 flex items-center justify-center">
-                              <span className="text-teal-600 text-2xl font-bold">FR</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center">
+                              <span className="text-yellow-600 text-2xl font-bold">FR</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Falguni Rinke
                           </h3>
-                          <p className="text-teal-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-yellow-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Event Manager
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1061,14 +1059,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-indigo-500 bg-gradient-to-br from-indigo-100 to-blue-100 flex items-center justify-center">
-                              <span className="text-indigo-600 text-2xl font-bold">OT</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center">
+                              <span className="text-yellow-600 text-2xl font-bold">OT</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Ojaswini Thote
                           </h3>
-                          <p className="text-indigo-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-yellow-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Event Manager
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1089,7 +1087,7 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-violet-500">
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500">
                               <img
                                 src="/Jash.jpg"
                                 alt="Jash Chauhan"
@@ -1103,7 +1101,7 @@ function App({ initialPage = 'home' }) {
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Jash Chauhan
                           </h3>
-                          <p className="text-violet-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-yellow-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Event Manager
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1124,14 +1122,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-rose-500 bg-gradient-to-br from-rose-100 to-pink-100 flex items-center justify-center">
-                              <span className="text-rose-600 text-2xl font-bold">AS</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center">
+                              <span className="text-yellow-600 text-2xl font-bold">AS</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Anaya Shende
                           </h3>
-                          <p className="text-rose-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-yellow-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Event Manager
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1152,14 +1150,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-sky-500 bg-gradient-to-br from-sky-100 to-cyan-100 flex items-center justify-center">
-                              <span className="text-sky-600 text-2xl font-bold">PT</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-yellow-500 bg-gradient-to-br from-yellow-100 to-amber-100 flex items-center justify-center">
+                              <span className="text-yellow-600 text-2xl font-bold">PT</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Pranati Tyagi
                           </h3>
-                          <p className="text-sky-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-yellow-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Event Manager
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1192,14 +1190,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-cyan-500 bg-gradient-to-br from-cyan-100 to-blue-100 flex items-center justify-center">
-                              <span className="text-cyan-600 text-2xl font-bold">SP</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-pink-500 bg-gradient-to-br from-pink-100 to-rose-100 flex items-center justify-center">
+                              <span className="text-pink-600 text-2xl font-bold">SP</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Sushmit Partakke
                           </h3>
-                          <p className="text-cyan-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-pink-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Web Developer
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1235,14 +1233,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-gray-500 bg-gradient-to-br from-gray-100 to-slate-100 flex items-center justify-center">
-                              <span className="text-gray-600 text-2xl font-bold">JA</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">JA</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Jasraj Singh Ataliya
                           </h3>
-                          <p className="text-gray-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1263,14 +1261,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-slate-500 bg-gradient-to-br from-slate-100 to-gray-100 flex items-center justify-center">
-                              <span className="text-slate-600 text-2xl font-bold">YK</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">YK</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Yash Khadgi
                           </h3>
-                          <p className="text-slate-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1291,14 +1289,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-zinc-500 bg-gradient-to-br from-zinc-100 to-gray-100 flex items-center justify-center">
-                              <span className="text-zinc-600 text-2xl font-bold">AR</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">AR</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Ayushi Ray
                           </h3>
-                          <p className="text-zinc-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1319,14 +1317,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-neutral-500 bg-gradient-to-br from-neutral-100 to-gray-100 flex items-center justify-center">
-                              <span className="text-neutral-600 text-2xl font-bold">KG</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">KG</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Kashish Gupta
                           </h3>
-                          <p className="text-neutral-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1347,14 +1345,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-stone-500 bg-gradient-to-br from-stone-100 to-gray-100 flex items-center justify-center">
-                              <span className="text-stone-600 text-2xl font-bold">AK</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">AK</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Arya Khandekar
                           </h3>
-                          <p className="text-stone-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1375,14 +1373,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-gray-500 bg-gradient-to-br from-gray-100 to-slate-100 flex items-center justify-center">
-                              <span className="text-gray-600 text-2xl font-bold">TM</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">TM</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Tabish Mansoori
                           </h3>
-                          <p className="text-gray-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1403,14 +1401,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-slate-500 bg-gradient-to-br from-slate-100 to-gray-100 flex items-center justify-center">
-                              <span className="text-slate-600 text-2xl font-bold">SH</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">SH</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Sunidhi Haware
                           </h3>
-                          <p className="text-slate-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1431,14 +1429,14 @@ function App({ initialPage = 'home' }) {
                       <div className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-100">
                         <div className="p-8 text-center">
                           <div className="relative mb-4">
-                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-zinc-500 bg-gradient-to-br from-zinc-100 to-gray-100 flex items-center justify-center">
-                              <span className="text-zinc-600 text-2xl font-bold">AW</span>
+                            <div className="w-24 h-24 mx-auto rounded-full overflow-hidden border-3 border-blue-500 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                              <span className="text-blue-600 text-2xl font-bold">AW</span>
                             </div>
                           </div>
                           <h3 className="text-lg font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Arpita Waghmare
                           </h3>
-                          <p className="text-zinc-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-blue-600 font-medium mb-2 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Core Member
                           </p>
                           <p className="text-xs text-gray-600 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
@@ -1658,14 +1656,8 @@ function App({ initialPage = 'home' }) {
                       <a href="#" className="text-blue-500 hover:text-blue-400 transition-colors">
                         <i className="ri-linkedin-line text-2xl"></i>
                       </a>
-                    </div>
                   </div>
-
-                  {/* Floating Elements */}
-                  <div className="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-                  <div className="absolute top-40 right-20 w-3 h-3 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
-                  <div className="absolute bottom-40 left-20 w-5 h-5 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '2.5s' }}></div>
-                  <div className="absolute bottom-20 right-10 w-3 h-3 bg-pink-400 rounded-full animate-ping" style={{ animationDelay: '3s' }}></div>
+                  </div>
                 </div>
               </div>
             )}
@@ -1890,6 +1882,13 @@ function App({ initialPage = 'home' }) {
               <div className="w-full min-h-screen bg-black py-20 relative z-[8]">
                 <div className="text-white text-center max-w-4xl mx-auto px-10">
                   <h1 className="text-6xl mb-12 mt-10 text-xl font-[Helvetica_Now_Display]">About IEEE Student Chapter</h1>
+
+                  {/* Website Credit */}
+                  <div className="text-center mb-8">
+                    <p className="text-gray-400 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
+                      Website created by <span className="text-blue-400 font-semibold">Jash Chauhan</span>
+                    </p>
+                  </div>
 
                   <div className="text-left space-y-8">
                     <div className="bg-gray-800 p-8 rounded-lg">
