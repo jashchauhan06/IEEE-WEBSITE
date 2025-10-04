@@ -15,6 +15,9 @@ const AppRouter = () => {
         {/* Team page */}
         <Route path="/team" element={<App initialPage="team" />} />
         
+        {/* Team ChromaGrid page */}
+        <Route path="/team-chroma" element={<App initialPage="team-chroma" />} />
+        
         {/* About page */}
         <Route path="/about" element={<App initialPage="about" />} />
         

@@ -4,6 +4,7 @@ import gsap from "gsap";
 import "remixicon/fonts/remixicon.css";
 import { addRegistration } from './supabase';
 import { useNavigate, useLocation } from 'react-router-dom';
+import TeamChroma from './TeamChroma';
 
 function App({ initialPage = 'home' }) {
   const navigate = useNavigate();
@@ -26,6 +27,9 @@ function App({ initialPage = 'home' }) {
         break;
       case '/team':
         setCurrentPage('team');
+        break;
+      case '/team-chroma':
+        setCurrentPage('team-chroma');
         break;
       case '/about':
         setCurrentPage('about');
@@ -202,7 +206,7 @@ function App({ initialPage = 'home' }) {
             }}>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Home</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/events'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Events</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/team'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Team</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/team-chroma'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Team</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/about'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>About</a></li>
             </ul>
             
@@ -795,8 +799,8 @@ function App({ initialPage = 'home' }) {
               </div>
             )}
 
-            {/* Team Page */}
-            {currentPage === 'team' && (
+            {/* Team Page - Removed, using ChromaGrid instead */}
+            {false && (
               <div className="w-full min-h-screen bg-gradient-to-br from-gray-50 to-white py-20 relative z-[8]">
                 <div className="text-center max-w-7xl mx-auto px-4 sm:px-10">
                   <div className="mb-16">
@@ -1614,7 +1618,7 @@ function App({ initialPage = 'home' }) {
                         </h4>
                         <ul className="space-y-2 text-gray-300" style={{ fontFamily: 'Arial, sans-serif' }}>
                           <li>• <button onClick={() => navigate('/events')} className="hover:text-cyan-400 transition-colors">Upcoming Events</button></li>
-                          <li>• <button onClick={() => navigate('/team')} className="hover:text-purple-400 transition-colors">Our Team</button></li>
+                          <li>• <button onClick={() => navigate('/team-chroma')} className="hover:text-purple-400 transition-colors">Our Team</button></li>
                           <li>• <button onClick={() => navigate('/registration')} className="hover:text-green-400 transition-colors">Event Registration</button></li>
                           <li>• <button onClick={() => navigate('/about')} className="hover:text-yellow-400 transition-colors">About IEEE</button></li>
                         </ul>
@@ -1701,18 +1705,18 @@ function App({ initialPage = 'home' }) {
                           leader_semester: formData.get('leader_semester'),
                           leader_section: formData.get('leader_section'),
                           leader_prn: formData.get('leader_prn'),
-                          member2_name: formData.get('member2_name') || null,
-                          member2_phone: formData.get('member2_phone') || null,
-                          member2_email: formData.get('member2_email') || null,
-                          member2_semester: formData.get('member2_semester') || null,
-                          member2_section: formData.get('member2_section') || null,
-                          member2_prn: formData.get('member2_prn') || null,
-                          member3_name: formData.get('member3_name') || null,
-                          member3_phone: formData.get('member3_phone') || null,
-                          member3_email: formData.get('member3_email') || null,
-                          member3_semester: formData.get('member3_semester') || null,
-                          member3_section: formData.get('member3_section') || null,
-                          member3_prn: formData.get('member3_prn') || null,
+                          member2_name: formData.get('member2_name'),
+                          member2_phone: formData.get('member2_phone'),
+                          member2_email: formData.get('member2_email'),
+                          member2_semester: formData.get('member2_semester'),
+                          member2_section: formData.get('member2_section'),
+                          member2_prn: formData.get('member2_prn'),
+                          member3_name: formData.get('member3_name'),
+                          member3_phone: formData.get('member3_phone'),
+                          member3_email: formData.get('member3_email'),
+                          member3_semester: formData.get('member3_semester'),
+                          member3_section: formData.get('member3_section'),
+                          member3_prn: formData.get('member3_prn'),
                         };
                         
                         // Submit to Supabase
@@ -1773,27 +1777,27 @@ function App({ initialPage = 'home' }) {
                             </div>
                           </div>
 
-                          {/* Team Member 2 (Optional) */}
+                          {/* Team Member 2 (Required) */}
                           <div className="mb-8">
                             <h3 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-                              Team Member 2 (Optional)
+                              Team Member 2 (Required)
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Full Name</label>
-                                <input type="text" name="member2_name" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="member2_name" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Phone Number</label>
-                                <input type="tel" name="member2_phone" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="tel" name="member2_phone" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>College Email</label>
-                                <input type="email" name="member2_email" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="email" name="member2_email" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Semester</label>
-                                <select name="member2_semester" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <select name="member2_semester" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
                                   <option value="">Select Semester</option>
                                   <option value="1">1st Semester</option>
                                   <option value="2">2nd Semester</option>
@@ -1807,36 +1811,36 @@ function App({ initialPage = 'home' }) {
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section</label>
-                                <input type="text" name="member2_section" placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="member2_section" required placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN</label>
-                                <input type="text" name="member2_prn" placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="member2_prn" required placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                             </div>
                           </div>
 
-                          {/* Team Member 3 (Optional) */}
+                          {/* Team Member 3 (Required) */}
                           <div className="mb-8">
                             <h3 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-                              Team Member 3 (Optional)
+                              Team Member 3 (Required)
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Full Name</label>
-                                <input type="text" name="member3_name" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="member3_name" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Phone Number</label>
-                                <input type="tel" name="member3_phone" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="tel" name="member3_phone" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>College Email</label>
-                                <input type="email" name="member3_email" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="email" name="member3_email" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Semester</label>
-                                <select name="member3_semester" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <select name="member3_semester" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
                                   <option value="">Select Semester</option>
                                   <option value="1">1st Semester</option>
                                   <option value="2">2nd Semester</option>
@@ -1850,11 +1854,11 @@ function App({ initialPage = 'home' }) {
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section</label>
-                                <input type="text" name="member3_section" placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="member3_section" required placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN</label>
-                                <input type="text" name="member3_prn" placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="member3_prn" required placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                             </div>
                           </div>
@@ -1875,6 +1879,11 @@ function App({ initialPage = 'home' }) {
                   </div>
                 </div>
               </div>
+            )}
+
+            {/* Team ChromaGrid Page */}
+            {currentPage === 'team-chroma' && (
+              <TeamChroma />
             )}
 
             {/* About Page */}
