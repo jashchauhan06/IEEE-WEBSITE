@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "pricedown";
+  src: url("./pricedown.otf");
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "pricedown";
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* IEEE Formation Image Styles */
+.ieee-formation-image {
+  position: absolute !important;
+  top: 5% !important;
+  left: 50% !important;
+  transform: translate(-50%) !important;
+  scale: 1.0;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.ieee-formation-container {
+  position: relative;
+  width: 50%;
+  height: 100%;
+}
+
+.ieee-text-container {
+  width: 50%;
+  padding: 2rem 0 2rem 2.5rem;
+}
+
+.ieee-main-title {
+  font-size: 8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.ieee-subtitle {
+  font-size: 8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.ieee-description {
+  margin-top: 2.5rem;
+  font-size: 1.25rem;
+  font-family: 'Helvetica Now Display', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.ieee-description + .ieee-description {
+  margin-top: 0.75rem;
+}
+
+.ieee-description:last-of-type {
+  margin-top: 2.5rem;
+}
+
+.ieee-contact-button {
+  background-color: #eab308;
+  color: #000;
+  padding: 1.5rem 2rem;
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ieee-contact-button:hover {
+  background-color: #f59e0b;
+}
