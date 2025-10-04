@@ -1380,10 +1380,43 @@ function App({ initialPage = 'home' }) {
                     <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-bounce" style={{ fontFamily: 'Arial, sans-serif' }}>
                       Oops! Page Not Found
                     </h2>
-                    <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    
+                    {/* Fun Error Messages */}
+                    <div className="mb-8">
+                      <p className="text-lg text-gray-400 italic" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        "Error 404: Page not found. Even our debugging skills couldn't locate this one!" 🤖
+                      </p>
+                    </div>
+                    <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8" style={{ fontFamily: 'Arial, sans-serif' }}>
                       The page you're looking for seems to have vanished into the digital void. 
                       Don't worry, even the best engineers encounter bugs sometimes!
                     </p>
+                    
+                    {/* Search Box */}
+                    <div className="max-w-md mx-auto mb-12">
+                      <div className="relative">
+                        <input 
+                          type="text" 
+                          placeholder="Search for pages, events, or content..."
+                          className="w-full px-6 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                          style={{ fontFamily: 'Arial, sans-serif' }}
+                          onKeyPress={(e) => {
+                            if (e.key === 'Enter') {
+                              const searchTerm = e.target.value.toLowerCase();
+                              if (searchTerm.includes('event')) navigate('/events');
+                              else if (searchTerm.includes('team')) navigate('/team');
+                              else if (searchTerm.includes('register')) navigate('/registration');
+                              else if (searchTerm.includes('about')) navigate('/about');
+                              else navigate('/');
+                            }
+                          }}
+                        />
+                        <i className="ri-search-line absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl"></i>
+                      </div>
+                      <p className="text-sm text-gray-400 mt-2" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        Try searching for "events", "team", "register", or "about"
+                      </p>
+                    </div>
                   </div>
 
                   {/* Animated Robot/Character */}
@@ -1394,6 +1427,54 @@ function App({ initialPage = 'home' }) {
                       </div>
                       <div className="absolute -top-4 -right-4 w-8 h-8 bg-red-500 rounded-full animate-ping"></div>
                       <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-yellow-400 rounded-full animate-pulse"></div>
+                    </div>
+                  </div>
+
+                  {/* Quick Navigation Links */}
+                  <div className="mb-12">
+                    <h3 className="text-2xl font-bold text-white mb-8" style={{ fontFamily: 'Arial, sans-serif' }}>
+                      Quick Navigation
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                      <button 
+                        onClick={() => navigate('/events')}
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="text-center">
+                          <i className="ri-calendar-event-line text-3xl text-cyan-400 mb-2"></i>
+                          <p className="text-white font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Events</p>
+                        </div>
+                      </button>
+                      
+                      <button 
+                        onClick={() => navigate('/team')}
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="text-center">
+                          <i className="ri-team-line text-3xl text-purple-400 mb-2"></i>
+                          <p className="text-white font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Team</p>
+                        </div>
+                      </button>
+                      
+                      <button 
+                        onClick={() => navigate('/registration')}
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="text-center">
+                          <i className="ri-user-add-line text-3xl text-green-400 mb-2"></i>
+                          <p className="text-white font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Register</p>
+                        </div>
+                      </button>
+                      
+                      <button 
+                        onClick={() => navigate('/about')}
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                      >
+                        <div className="text-center">
+                          <i className="ri-information-line text-3xl text-yellow-400 mb-2"></i>
+                          <p className="text-white font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>About</p>
+                        </div>
+                      </button>
                     </div>
                   </div>
 
@@ -1424,15 +1505,61 @@ function App({ initialPage = 'home' }) {
                     </button>
                   </div>
 
+                  {/* Helpful Suggestions */}
+                  <div className="mb-12">
+                    <h3 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
+                      What were you looking for?
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                      <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                        <h4 className="text-lg font-semibold text-white mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          🎯 Popular Pages
+                        </h4>
+                        <ul className="space-y-2 text-gray-300" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <li>• <button onClick={() => navigate('/events')} className="hover:text-cyan-400 transition-colors">Upcoming Events</button></li>
+                          <li>• <button onClick={() => navigate('/team')} className="hover:text-purple-400 transition-colors">Our Team</button></li>
+                          <li>• <button onClick={() => navigate('/registration')} className="hover:text-green-400 transition-colors">Event Registration</button></li>
+                          <li>• <button onClick={() => navigate('/about')} className="hover:text-yellow-400 transition-colors">About IEEE</button></li>
+                        </ul>
+                      </div>
+                      
+                      <div className="bg-white/5 backdrop-blur-lg rounded-xl p-6 border border-white/10">
+                        <h4 className="text-lg font-semibold text-white mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          🔍 Common Issues
+                        </h4>
+                        <ul className="space-y-2 text-gray-300" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <li>• Check the URL spelling</li>
+                          <li>• Try refreshing the page</li>
+                          <li>• Clear your browser cache</li>
+                          <li>• Contact us if the problem persists</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* IEEE Branding */}
                   <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
                     <div className="flex items-center justify-center gap-4 mb-4">
                       <img src="/ieee_circle.png" alt="IEEE Logo" className="w-12 h-12" />
                       <h3 className="text-2xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE SIT Nagpur</h3>
                     </div>
-                    <p className="text-gray-300 text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    <p className="text-gray-300 text-lg mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
                       "Advancing Technology for Humanity"
                     </p>
+                    <div className="flex justify-center gap-4">
+                      <a href="mailto:ieee.sitnagpur@example.com" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                        <i className="ri-mail-line text-2xl"></i>
+                      </a>
+                      <a href="#" className="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i className="ri-facebook-line text-2xl"></i>
+                      </a>
+                      <a href="#" className="text-blue-300 hover:text-blue-200 transition-colors">
+                        <i className="ri-twitter-line text-2xl"></i>
+                      </a>
+                      <a href="#" className="text-blue-500 hover:text-blue-400 transition-colors">
+                        <i className="ri-linkedin-line text-2xl"></i>
+                      </a>
+                    </div>
                   </div>
 
                   {/* Floating Elements */}
