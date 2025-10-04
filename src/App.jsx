@@ -12,6 +12,7 @@ function App({ initialPage = 'home' }) {
   let [showContent, setShowContent] = useState(false);
   let [currentPage, setCurrentPage] = useState(initialPage);
   let [selectedEvent, setSelectedEvent] = useState(null);
+  let [showMobilePopup, setShowMobilePopup] = useState(false);
 
   // Update currentPage when URL changes
   useEffect(() => {
@@ -42,6 +43,16 @@ function App({ initialPage = 'home' }) {
         setCurrentPage('home');
     }
   }, [location.pathname]);
+
+  // Mobile detection and popup
+  useEffect(() => {
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+    const hasSeenPopup = localStorage.getItem('ieee-mobile-popup-seen');
+    
+    if (isMobile && !hasSeenPopup) {
+      setShowMobilePopup(true);
+    }
+  }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -217,6 +228,71 @@ function App({ initialPage = 'home' }) {
               <i className="ri-menu-line"></i>
             </button>
           </nav>
+
+          {/* Mobile Desktop Site Popup */}
+          {showMobilePopup && (
+            <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[9999] flex items-center justify-center p-4">
+              <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 relative">
+                {/* Close Button */}
+                <button
+                  onClick={() => {
+                    setShowMobilePopup(false);
+                    localStorage.setItem('ieee-mobile-popup-seen', 'true');
+                  }}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <i className="ri-close-line text-2xl"></i>
+                </button>
+
+                {/* Popup Content */}
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="ri-computer-line text-3xl text-blue-600"></i>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    Better Experience Available
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    For the best experience with our IEEE website, we recommend using the desktop version. 
+                    You'll get better navigation, larger text, and full functionality.
+                  </p>
+                  
+                  <div className="space-y-3">
+                    <button
+                      onClick={() => {
+                        setShowMobilePopup(false);
+                        localStorage.setItem('ieee-mobile-popup-seen', 'true');
+                      }}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                      style={{ fontFamily: 'Arial, sans-serif' }}
+                    >
+                      Continue on Mobile
+                    </button>
+                    
+                    <button
+                      onClick={() => {
+                        // Open desktop version in new tab
+                        const currentUrl = window.location.href;
+                        window.open(currentUrl, '_blank');
+                        setShowMobilePopup(false);
+                        localStorage.setItem('ieee-mobile-popup-seen', 'true');
+                      }}
+                      className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                      style={{ fontFamily: 'Arial, sans-serif' }}
+                    >
+                      Open Desktop Version
+                    </button>
+                  </div>
+                  
+                  <p className="text-xs text-gray-500 mt-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    This popup won't show again
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Event Details Page */}
           {currentPage === 'event-details' && selectedEvent && (
