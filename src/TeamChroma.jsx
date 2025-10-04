@@ -11,9 +11,8 @@ const TeamChroma = () => {
       handle: "@aryakashikar",
       borderColor: "#3B82F6", // Blue for Advisor
       gradient: "linear-gradient(225deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/aryakashikar"
+      url: "https://linkedin.com"
     },
-    
     // Leadership Team
     { // Using existing image
       title: "Parth Choudhari",
@@ -21,7 +20,7 @@ const TeamChroma = () => {
       handle: "@parthchoudhari",
       borderColor: "#EF4444", // Red for Chair
       gradient: "linear-gradient(145deg, #EF4444, #000)",
-      url: "https://linkedin.com/in/parthchoudhari"
+      url: "https://linkedin.com"
     },
     {
       title: "Rishab Thutheja",
@@ -29,7 +28,7 @@ const TeamChroma = () => {
       handle: "@rishabthutheja",
       borderColor: "#8B5CF6", // Purple for Vice-Chair
       gradient: "linear-gradient(180deg, #8B5CF6, #000)",
-      url: "https://linkedin.com/in/rishabthutheja"
+      url: "https://linkedin.com"
     },
     {
       title: "Rinku Choudhary",
@@ -37,7 +36,7 @@ const TeamChroma = () => {
       handle: "@rinkuchoudhary",
       borderColor: "#EC4899", // Pink for Vice-Chair
       gradient: "linear-gradient(210deg, #EC4899, #000)",
-      url: "https://linkedin.com/in/rinkuchoudhary"
+      url: "https://linkedin.com"
     },
     {
       title: "Rahul Malani",
@@ -45,7 +44,7 @@ const TeamChroma = () => {
       handle: "@rahulmalani",
       borderColor: "#F59E0B", // Orange for Secretary
       gradient: "linear-gradient(165deg, #F59E0B, #000)",
-      url: "https://linkedin.com/in/rahulmalani"
+      url: "https://linkedin.com"
     },
     {
       title: "Atharv Jaiswal",
@@ -53,7 +52,7 @@ const TeamChroma = () => {
       handle: "@atharvjaiswal",
       borderColor: "#10B981", // Green for Treasurer
       gradient: "linear-gradient(195deg, #10B981, #000)",
-      url: "https://linkedin.com/in/atharvjaiswal"
+      url: "https://linkedin.com/"
     },
     
     // Event Managers
@@ -63,7 +62,7 @@ const TeamChroma = () => {
       handle: "@sanikajumde",
       borderColor: "#EAB308", // Yellow for Event Manager
       gradient: "linear-gradient(145deg, #EAB308, #000)",
-      url: "https://linkedin.com/in/sanikajumde"
+      url: "https://linkedin.com"
     },
     {
       title: "Falguni Rinke",
@@ -71,7 +70,7 @@ const TeamChroma = () => {
       handle: "@falgunirinke",
       borderColor: "#EAB308", // Yellow for Event Manager
       gradient: "linear-gradient(180deg, #EAB308, #000)",
-      url: "https://linkedin.com/in/falgunirinke"
+      url: "https://linkedin.com"
     },
     {
       title: "Ojaswini Thote",
@@ -79,7 +78,7 @@ const TeamChroma = () => {
       handle: "@ojaswinithote",
       borderColor: "#EAB308", // Yellow for Event Manager
       gradient: "linear-gradient(210deg, #EAB308, #000)",
-      url: "https://linkedin.com/in/ojaswinithote"
+      url: "https://linkedin.com"
     },
     {
       image: "/Jash.jpg", // Using existing image
@@ -88,7 +87,7 @@ const TeamChroma = () => {
       handle: "@jashchauhan",
       borderColor: "#EAB308", // Yellow for Event Manager
       gradient: "linear-gradient(165deg, #EAB308, #000)",
-      url: "https://linkedin.com/in/jashchauhan"
+      url: "https://linkedin.com/in/jashchauhan06"
     },
     {
       title: "Anaya Shende",
@@ -96,7 +95,7 @@ const TeamChroma = () => {
       handle: "@anayashende",
       borderColor: "#EAB308", // Yellow for Event Manager
       gradient: "linear-gradient(195deg, #EAB308, #000)",
-      url: "https://linkedin.com/in/anayashende"
+      url: "https://linkedin.com"
     },
     {
       title: "Pranati Tyagi",
@@ -104,7 +103,7 @@ const TeamChroma = () => {
       handle: "@pranatityagi",
       borderColor: "#EAB308", // Yellow for Event Manager
       gradient: "linear-gradient(225deg, #EAB308, #000)",
-      url: "https://linkedin.com/in/pranatityagi"
+      url: "https://linkedin.com"
     },
     
     // Web Developer
@@ -114,7 +113,7 @@ const TeamChroma = () => {
       handle: "@sushmitpartakke",
       borderColor: "#EC4899", // Pink for Web Developer
       gradient: "linear-gradient(135deg, #EC4899, #000)",
-      url: "https://linkedin.com/in/sushmitpartakke"
+      url: "https://linkedin.com"
     },
     
     // Core Members
@@ -124,7 +123,7 @@ const TeamChroma = () => {
       handle: "@jasrajsingh",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(145deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/jasrajsingh"
+      url: "https://linkedin.com"
     },
     {
       title: "Yash Khadgi",
@@ -132,7 +131,7 @@ const TeamChroma = () => {
       handle: "@yashkhadgi",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(180deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/yashkhadgi"
+      url: "https://linkedin.com"
     },
     {
       title: "Ayushi Ray",
@@ -140,7 +139,7 @@ const TeamChroma = () => {
       handle: "@ayushiray",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(210deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/ayushiray"
+      url: "https://linkedin.com"
     },
     {
       title: "Kashish Gupta",
@@ -148,7 +147,7 @@ const TeamChroma = () => {
       handle: "@kashishgupta",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(165deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/kashishgupta"
+      url: "https://linkedin.com"
     },
     {
       title: "Arya Khandekar",
@@ -156,7 +155,7 @@ const TeamChroma = () => {
       handle: "@aryakhandekar",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(195deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/aryakhandekar"
+      url: "https://linkedin.com"
     },
     {
       title: "Tabish Mansoori",
@@ -164,7 +163,7 @@ const TeamChroma = () => {
       handle: "@tabishmansoori",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(225deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/tabishmansoori"
+      url: "https://linkedin.com"
     },
     {
       title: "Sunidhi Haware",
@@ -172,7 +171,7 @@ const TeamChroma = () => {
       handle: "@sunidhihaware",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(135deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/sunidhihaware"
+      url: "https://linkedin.com"
     },
     {
       title: "Arpita Waghmare",
@@ -180,7 +179,7 @@ const TeamChroma = () => {
       handle: "@arpitawaghmare",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(150deg, #3B82F6, #000)",
-      url: "https://linkedin.com/in/arpitawaghmare"
+      url: "https://linkedin.com"
     }
   ];
 
@@ -189,7 +188,7 @@ const TeamChroma = () => {
       {/* Header */}
       <div className="text-center py-12">
         <h1 className="text-4xl md:text-6xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-          IEEE Leadership Team
+          IEEE Core Team
         </h1>
         <p className="text-lg text-gray-400 mb-8" style={{ fontFamily: 'Arial, sans-serif' }}>
           Meet our dedicated team leading the IEEE Student Branch
