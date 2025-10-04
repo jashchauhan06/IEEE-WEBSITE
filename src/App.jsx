@@ -1,13 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "remixicon/fonts/remixicon.css";
 import { addRegistration } from './supabase';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-function App() {
+function App({ initialPage = 'home' }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+  
   let [showContent, setShowContent] = useState(false);
-  let [currentPage, setCurrentPage] = useState('home');
+  let [currentPage, setCurrentPage] = useState(initialPage);
   let [selectedEvent, setSelectedEvent] = useState(null);
+
+  // Update currentPage when URL changes
+  useEffect(() => {
+    const path = location.pathname;
+    switch (path) {
+      case '/':
+        setCurrentPage('home');
+        break;
+      case '/events':
+        setCurrentPage('events');
+        break;
+      case '/team':
+        setCurrentPage('team');
+        break;
+      case '/about':
+        setCurrentPage('about');
+        break;
+      case '/registration':
+        setCurrentPage('registration');
+        break;
+      case '/event-details':
+        setCurrentPage('event-details');
+        break;
+      case '/404':
+        setCurrentPage('404');
+        break;
+      default:
+        setCurrentPage('home');
+    }
+  }, [location.pathname]);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -125,7 +159,7 @@ function App() {
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <button 
-                onClick={() => setCurrentPage('home')}
+                onClick={() => navigate('/')}
                 style={{ 
                   background: 'none', 
                   border: 'none', 
@@ -154,10 +188,10 @@ function App() {
               margin: 0,
               padding: 0
             }}>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Home</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('events'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Events</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('team'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Team</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>About</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Home</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/events'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Events</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/team'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Team</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/about'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>About</a></li>
             </ul>
           </nav>
 
@@ -167,7 +201,7 @@ function App() {
               <div className="container mx-auto px-6 py-12">
                 {/* Back Button */}
                 <button
-                  onClick={() => setCurrentPage('home')}
+                  onClick={() => navigate('/')}
                   className="mb-8 flex items-center gap-2 text-white hover:text-blue-300 transition-colors duration-300"
                   style={{ fontFamily: 'Arial, sans-serif' }}
                 >
@@ -451,7 +485,7 @@ function App() {
                       </p>
                       <button 
                         className="ieee-contact-button"
-                        onClick={() => setCurrentPage('events')}
+                        onClick={() => navigate('/events')}
                         style={{ cursor: 'pointer', fontFamily: 'Arial, sans-serif' }}
                       >
                         Events Details
@@ -553,7 +587,7 @@ function App() {
                                 description: "Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.",
                                 status: "Completed"
                               });
-                              setCurrentPage('event-details');
+                              navigate('/event-details');
                             }}
                             className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg text-center font-bold hover:bg-blue-200 transition-colors duration-300 w-full" 
                             style={{ fontFamily: 'Arial, sans-serif' }}
@@ -611,7 +645,7 @@ function App() {
                           <button 
                             className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg" 
                             style={{ fontFamily: 'Arial, sans-serif' }}
-                            onClick={() => setCurrentPage('registration')}
+                            onClick={() => navigate('/registration')}
                           >
                             Register Now
                           </button>
@@ -1366,7 +1400,7 @@ function App() {
                   {/* Action Buttons */}
                   <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-16">
                     <button 
-                      onClick={() => setCurrentPage('home')}
+                      onClick={() => navigate('/')}
                       className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25"
                       style={{ fontFamily: 'Arial, sans-serif' }}
                     >
@@ -1416,7 +1450,7 @@ function App() {
                 <div className="container mx-auto px-6 py-12">
                   {/* Back Button */}
                   <button
-                    onClick={() => setCurrentPage('events')}
+                    onClick={() => navigate('/events')}
                     className="mb-8 flex items-center gap-2 text-white hover:text-blue-300 transition-colors duration-300"
                     style={{ fontFamily: 'Arial, sans-serif' }}
                   >
@@ -1468,7 +1502,7 @@ function App() {
                         
                         if (result.success) {
                           alert('Registration submitted successfully! We will contact you soon.');
-                          setCurrentPage('events');
+                          navigate('/events');
                         } else {
                           alert('Registration failed. Please try again.');
                         }
