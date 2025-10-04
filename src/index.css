@@ -81,3 +81,402 @@ body {
 .ieee-contact-button:hover {
   background-color: #f59e0b;
 }
+
+/* =====================================================
+   MOBILE RESPONSIVE STYLES
+   ===================================================== */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  /* Navigation Bar Mobile */
+  .mobile-nav {
+    padding: 1rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  .mobile-menu-btn {
+    display: block !important;
+    position: absolute !important;
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+  
+  .ieee-logo {
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Mobile Menu Dropdown */
+  .mobile-nav ul {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #2f9aa6 !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    padding: 1rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .mobile-nav ul.show {
+    display: flex !important;
+  }
+  
+  .mobile-nav li {
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  .mobile-nav li:last-child {
+    border-bottom: none !important;
+  }
+  
+  .mobile-nav li a {
+    display: block !important;
+    padding: 1rem !important;
+    font-size: 1.1rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  
+  /* IEEE Logo Mobile */
+  .ieee-logo {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Main Content Mobile */
+  .ieee-formation-container {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .ieee-text-container {
+    width: 100% !important;
+    padding: 1rem !important;
+    text-align: center !important;
+  }
+  
+  /* IEEE Text Mobile */
+  .ieee-main-title {
+    font-size: 3rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .ieee-subtitle {
+    font-size: 3rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .ieee-description {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-top: 1rem !important;
+  }
+  
+  .ieee-contact-button {
+    padding: 1rem 1.5rem !important;
+    font-size: 1.2rem !important;
+    margin-top: 1.5rem !important;
+    width: 100% !important;
+  }
+  
+  /* Landing Page Mobile */
+  .landing {
+    min-height: 100vh !important;
+    padding: 1rem !important;
+  }
+  
+  .landing h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .landing h2 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  /* Event Cards Mobile */
+  .event-card {
+    margin-bottom: 1rem !important;
+  }
+  
+  .event-card h3 {
+    font-size: 1.5rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .event-card p {
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Team Cards Mobile */
+  .team-card {
+    margin-bottom: 1rem !important;
+    padding: 1rem !important;
+  }
+  
+  .team-card h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .team-card p {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Registration Form Mobile */
+  .registration-form {
+    padding: 1rem !important;
+  }
+  
+  .registration-form h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .registration-form h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .registration-form input,
+  .registration-form select {
+    padding: 0.75rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .registration-form button {
+    padding: 1rem !important;
+    font-size: 1.1rem !important;
+    width: 100% !important;
+  }
+  
+  /* 404 Page Mobile */
+  .error-404 h1 {
+    font-size: 6rem !important;
+  }
+  
+  .error-404 h2 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .error-404 p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .error-404 .search-box {
+    width: 100% !important;
+    padding: 0.75rem !important;
+  }
+  
+  .error-404 .nav-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.5rem !important;
+  }
+  
+  .error-404 .nav-button {
+    padding: 0.75rem !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ieee-main-title {
+    font-size: 5rem !important;
+  }
+  
+  .ieee-subtitle {
+    font-size: 5rem !important;
+  }
+  
+  .ieee-description {
+    font-size: 1.1rem !important;
+  }
+  
+  nav ul {
+    gap: 2rem !important;
+  }
+  
+  nav li a {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  /* Extra small mobile adjustments */
+  .ieee-main-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .ieee-subtitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .ieee-description {
+    font-size: 0.9rem !important;
+  }
+  
+  nav {
+    padding: 0.5rem !important;
+  }
+  
+  nav ul {
+    gap: 0.5rem !important;
+  }
+  
+  nav li a {
+    font-size: 0.9rem !important;
+    padding: 0.25rem 0.5rem !important;
+  }
+  
+  .ieee-contact-button {
+    padding: 0.75rem 1rem !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Landing page text adjustments */
+  .landing h1 {
+    font-size: 2rem !important;
+  }
+  
+  .landing h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  /* Event cards on small mobile */
+  .event-card h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .event-card p {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Registration form on small mobile */
+  .registration-form h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .registration-form h2 {
+    font-size: 1.2rem !important;
+  }
+  
+  .registration-form input,
+  .registration-form select {
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* 404 page on small mobile */
+  .error-404 h1 {
+    font-size: 4rem !important;
+  }
+  
+  .error-404 h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .error-404 .nav-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.25rem !important;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .ieee-formation-container {
+    width: 50% !important;
+    height: 100vh !important;
+  }
+  
+  .ieee-text-container {
+    width: 50% !important;
+    padding: 1rem !important;
+  }
+  
+  .ieee-main-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .ieee-subtitle {
+    font-size: 2.5rem !important;
+  }
+  
+  .ieee-description {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* High DPI Mobile Screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .ieee-formation-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Touch-friendly buttons */
+@media (max-width: 768px) {
+  button, .ieee-contact-button, nav a {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Improve touch targets */
+  .nav-button, .quick-nav-button {
+    padding: 1rem !important;
+    margin: 0.25rem !important;
+  }
+}
+
+/* Prevent horizontal scroll */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .container, .max-w-7xl, .max-w-4xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Mobile-specific utility classes */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-padding {
+    padding: 1rem !important;
+  }
+  
+  .mobile-margin {
+    margin: 0.5rem !important;
+  }
+}

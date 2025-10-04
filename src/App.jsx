@@ -141,6 +141,7 @@ function App({ initialPage = 'home' }) {
         <div className="main w-full">
           {/* Navigation Bar */}
           <nav
+            className="mobile-nav"
             style={{
               position: 'fixed',
               top: 0,
@@ -177,11 +178,11 @@ function App({ initialPage = 'home' }) {
                 style={{ height: '40px', width: 'auto' }}
               />
               </button>
-              <div style={{ fontWeight: 'normal', fontSize: '1.5rem', letterSpacing: 2, fontFamily: 'Arial, sans-serif' }}>
+              <div className="ieee-logo" style={{ fontWeight: 'normal', fontSize: '1.5rem', letterSpacing: 2, fontFamily: 'Arial, sans-serif' }}>
                 IEEE SIT Nagpur
               </div>
             </div>
-            <ul style={{
+            <ul className="desktop-nav" style={{
               display: 'flex',
               gap: '2.5rem',
               listStyle: 'none',
@@ -193,6 +194,28 @@ function App({ initialPage = 'home' }) {
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/team'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>Team</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); navigate('/about'); }} style={{ color: 'inherit', textDecoration: 'none', fontWeight: 'normal', fontFamily: 'Arial, sans-serif', cursor: 'pointer' }}>About</a></li>
             </ul>
+            
+            {/* Mobile Menu Button */}
+            <button 
+              className="mobile-menu-btn"
+              onClick={() => {
+                const mobileMenu = document.querySelector('.mobile-nav ul');
+                if (mobileMenu) {
+                  mobileMenu.classList.toggle('show');
+                }
+              }}
+              style={{
+                display: 'none',
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                fontSize: '1.5rem',
+                cursor: 'pointer',
+                padding: '0.5rem'
+              }}
+            >
+              <i className="ri-menu-line"></i>
+            </button>
           </nav>
 
           {/* Event Details Page */}
@@ -463,28 +486,28 @@ function App({ initialPage = 'home' }) {
                 </div>
 
                 <div className="w-full flex justify-center bg-black py-10 relative z-[8]">
-                  <div className="flex text-white w-full px-10">
-                    <div className="ieee-formation-container">
+                  <div className="flex flex-col lg:flex-row text-white w-full px-10">
+                    <div className="ieee-formation-container mobile-full-width">
                       <img
                         className="ieee-formation-image"
                         src="./IEEE_FORMATION.png"
                         alt="IEEE Student Formation at SIT Nagpur"
                       />
                     </div>
-                    <div className="ieee-text-container">
-                      <h1 className="ieee-main-title">IEEE Student Chapter</h1>
-                      <h1 className="ieee-subtitle">SIT Nagpur</h1>
-                      <p className="ieee-description">
+                    <div className="ieee-text-container mobile-center">
+                      <h1 className="ieee-main-title" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE Student Chapter</h1>
+                      <h1 className="ieee-subtitle" style={{ fontFamily: 'Arial, sans-serif' }}>SIT Nagpur</h1>
+                      <p className="ieee-description" style={{ fontFamily: 'Arial, sans-serif' }}>
                         The IEEE Student Branch at Symbiosis Institute of Technology, Nagpur, is a dynamic platform dedicated to fostering innovation, technical excellence, and research-driven learning among students.
                       </p>
-                      <p className="ieee-description">
+                      <p className="ieee-description" style={{ fontFamily: 'Arial, sans-serif' }}>
                         Its primary objectives include promoting knowledge sharing in emerging technologies, facilitating hands-on workshops and projects, and encouraging active participation in research and development initiatives.
                       </p>
-                      <p className="ieee-description">
+                      <p className="ieee-description" style={{ fontFamily: 'Arial, sans-serif' }}>
                         The branch aims to create opportunities for students to collaborate on innovative ideas, publish research papers, and engage with professionals and peers globally. By nurturing technical and professional skills, it empowers members to contribute to technological advancements and research breakthroughs that benefit society.
                       </p>
                       <button 
-                        className="ieee-contact-button"
+                        className="ieee-contact-button mobile-full-width"
                         onClick={() => navigate('/events')}
                         style={{ cursor: 'pointer', fontFamily: 'Arial, sans-serif' }}
                       >
@@ -609,7 +632,7 @@ function App({ initialPage = 'home' }) {
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       {/* Upcoming Event 1 - Bug Bounty Hackathon */}
-                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-red-400">
+                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-red-400 event-card">
                         <div className="bg-gradient-to-r from-red-600 to-pink-600 p-6 text-white">
                           <div className="flex justify-between items-start mb-4">
                             <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE STUDENT BRANCH PRESENTS</div>
@@ -1363,7 +1386,7 @@ function App({ initialPage = 'home' }) {
 
             {/* 404 Page */}
             {currentPage === '404' && (
-              <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 py-20 relative z-[8] overflow-hidden">
+              <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 py-20 relative z-[8] overflow-hidden error-404">
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0 overflow-hidden">
                   <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
@@ -1398,7 +1421,7 @@ function App({ initialPage = 'home' }) {
                         <input 
                           type="text" 
                           placeholder="Search for pages, events, or content..."
-                          className="w-full px-6 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300"
+                          className="w-full px-6 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-300 search-box"
                           style={{ fontFamily: 'Arial, sans-serif' }}
                           onKeyPress={(e) => {
                             if (e.key === 'Enter') {
@@ -1435,10 +1458,10 @@ function App({ initialPage = 'home' }) {
                     <h3 className="text-2xl font-bold text-white mb-8" style={{ fontFamily: 'Arial, sans-serif' }}>
                       Quick Navigation
                     </h3>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto nav-grid">
                       <button 
                         onClick={() => navigate('/events')}
-                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105 nav-button"
                       >
                         <div className="text-center">
                           <i className="ri-calendar-event-line text-3xl text-cyan-400 mb-2"></i>
@@ -1448,7 +1471,7 @@ function App({ initialPage = 'home' }) {
                       
                       <button 
                         onClick={() => navigate('/team')}
-                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105 nav-button"
                       >
                         <div className="text-center">
                           <i className="ri-team-line text-3xl text-purple-400 mb-2"></i>
@@ -1458,7 +1481,7 @@ function App({ initialPage = 'home' }) {
                       
                       <button 
                         onClick={() => navigate('/registration')}
-                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105 nav-button"
                       >
                         <div className="text-center">
                           <i className="ri-user-add-line text-3xl text-green-400 mb-2"></i>
@@ -1468,7 +1491,7 @@ function App({ initialPage = 'home' }) {
                       
                       <button 
                         onClick={() => navigate('/about')}
-                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105"
+                        className="group bg-white/10 hover:bg-white/20 backdrop-blur-lg rounded-xl p-4 border border-white/20 transition-all duration-300 hover:scale-105 nav-button"
                       >
                         <div className="text-center">
                           <i className="ri-information-line text-3xl text-yellow-400 mb-2"></i>
@@ -1586,7 +1609,7 @@ function App({ initialPage = 'home' }) {
                   </button>
 
                   {/* Registration Header */}
-                  <div className="text-center mb-12">
+                  <div className="text-center mb-12 registration-form">
                     <h1 className="text-5xl font-bold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
                       Bug Bounty Hackathon Registration
                     </h1>
