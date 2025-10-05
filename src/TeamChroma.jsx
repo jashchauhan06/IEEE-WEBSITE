@@ -86,7 +86,7 @@ const TeamChroma = () => {
       url: "https://linkedin.com"
     },
     {
-      image: "/Jash.jpg", // Using existing image
+      image: "/Jash.jpg",
       title: "Jash Chauhan",
       subtitle: "Event Manager",
       handle: "@jashchauhan",
@@ -123,6 +123,7 @@ const TeamChroma = () => {
     
     // Core Members
     {
+      image: "/Jasraj.jpg",
       title: "Jasraj Singh Ataliya",
       subtitle: "Core Member",
       handle: "@jasrajsingh",
