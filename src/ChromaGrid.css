@@ -6,7 +6,7 @@
   grid-template-columns: repeat(var(--cols, 3), 1fr);
   grid-auto-rows: auto;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
@@ -21,7 +21,7 @@
 @media (max-width: 1124px) {
   .chroma-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     padding: 0.5rem;
     max-width: 100%;
   }
@@ -30,7 +30,7 @@
 @media (max-width: 768px) {
   .chroma-grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+    gap: 2rem;
     padding: 1rem;
     max-width: 100%;
   }
@@ -39,7 +39,7 @@
 @media (max-width: 480px) {
   .chroma-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 2rem;
     padding: 1rem;
     max-width: 100%;
   }
