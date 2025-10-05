@@ -576,7 +576,7 @@ function App({ initialPage = 'home' }) {
                       />
                     </div>
                     <div className="ieee-text-container mobile-center">
-                      <h1 className="ieee-main-title" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE Student Chapter</h1>
+                      <h1 className="ieee-main-title" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE Student Branch</h1>
                       <h1 className="ieee-subtitle" style={{ fontFamily: 'Arial, sans-serif' }}>SIT Nagpur</h1>
                       <p className="ieee-description" style={{ fontFamily: 'Arial, sans-serif' }}>
                         The IEEE Student Branch at Symbiosis Institute of Technology, Nagpur, is a dynamic platform dedicated to fostering innovation, technical excellence, and research-driven learning among students.
