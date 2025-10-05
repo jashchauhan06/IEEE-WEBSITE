@@ -5,6 +5,7 @@ import "remixicon/fonts/remixicon.css";
 import { addRegistration } from './supabase';
 import { useNavigate, useLocation } from 'react-router-dom';
 import TeamChroma from './TeamChroma';
+import TiltedCard from './TiltedCard';
 
 function App({ initialPage = 'home' }) {
   const navigate = useNavigate();
@@ -193,7 +194,7 @@ function App({ initialPage = 'home' }) {
                 style={{ height: '40px', width: 'auto' }}
               />
               </button>
-              <div className="ieee-logo" style={{ fontWeight: 'normal', fontSize: '1.5rem', letterSpacing: 2, fontFamily: 'Arial, sans-serif' }}>
+              <div className="ieee-logo noto-serif-hebrew" style={{ fontWeight: 'normal', fontSize: '1.5rem', letterSpacing: 2 }}>
                 IEEE SIT Nagpur
               </div>
             </div>
@@ -1768,11 +1769,19 @@ function App({ initialPage = 'home' }) {
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section *</label>
-                                <input type="text" name="leader_section" required placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <select name="leader_section" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                  <option value="">Select Section</option>
+                                  <option value="A">Section A</option>
+                                  <option value="B">Section B</option>
+                                  <option value="C">Section C</option>
+                                  <option value="D">Section D</option>
+                                  <option value="E">Section E</option>
+                                  <option value="F">Section F</option>
+                                </select>
                               </div>
                               <div>
                                 <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN *</label>
-                                <input type="text" name="leader_prn" required placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <input type="text" name="leader_prn" required placeholder="e.g., 24070521000" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                             </div>
                           </div>
@@ -1784,19 +1793,19 @@ function App({ initialPage = 'home' }) {
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Full Name</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Full Name *</label>
                                 <input type="text" name="member2_name" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Phone Number</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Phone Number *</label>
                                 <input type="tel" name="member2_phone" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>College Email</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>College Email *</label>
                                 <input type="email" name="member2_email" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Semester</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Semester *</label>
                                 <select name="member2_semester" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
                                   <option value="">Select Semester</option>
                                   <option value="1">1st Semester</option>
@@ -1810,12 +1819,20 @@ function App({ initialPage = 'home' }) {
                                 </select>
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section</label>
-                                <input type="text" name="member2_section" required placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section *</label>
+                                <select name="member2_section" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                  <option value="">Select Section</option>
+                                  <option value="A">Section A</option>
+                                  <option value="B">Section B</option>
+                                  <option value="C">Section C</option>
+                                  <option value="D">Section D</option>
+                                  <option value="E">Section E</option>
+                                  <option value="F">Section F</option>
+                                </select>
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN</label>
-                                <input type="text" name="member2_prn" required placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN *</label>
+                                <input type="text" name="member2_prn" required placeholder="e.g., 24070521001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                             </div>
                           </div>
@@ -1827,19 +1844,19 @@ function App({ initialPage = 'home' }) {
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Full Name</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Full Name *</label>
                                 <input type="text" name="member3_name" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Phone Number</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Phone Number *</label>
                                 <input type="tel" name="member3_phone" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>College Email</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>College Email *</label>
                                 <input type="email" name="member3_email" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Semester</label>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Semester *</label>
                                 <select name="member3_semester" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
                                   <option value="">Select Semester</option>
                                   <option value="1">1st Semester</option>
@@ -1853,12 +1870,20 @@ function App({ initialPage = 'home' }) {
                                 </select>
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section</label>
-                                <input type="text" name="member3_section" required placeholder="e.g., A, B, C" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Section *</label>
+                                <select name="member3_section" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                  <option value="">Select Section</option>
+                                  <option value="A">Section A</option>
+                                  <option value="B">Section B</option>
+                                  <option value="C">Section C</option>
+                                  <option value="D">Section D</option>
+                                  <option value="E">Section E</option>
+                                  <option value="F">Section F</option>
+                                </select>
                               </div>
                               <div>
-                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN</label>
-                                <input type="text" name="member3_prn" required placeholder="e.g., 2023BCS001" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>PRN *</label>
+                                <input type="text" name="member3_prn" required placeholder="e.g., 24070521002" className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" style={{ fontFamily: 'Arial, sans-serif' }} />
                               </div>
                             </div>
                           </div>
@@ -1888,49 +1913,163 @@ function App({ initialPage = 'home' }) {
 
             {/* About Page */}
             {currentPage === 'about' && (
-              <div className="w-full min-h-screen bg-black py-20 relative z-[8]">
-                <div className="text-white text-center max-w-4xl mx-auto px-10">
-                  <h1 className="text-6xl mb-12 mt-10 text-xl font-[Helvetica_Now_Display]">About IEEE Student Chapter</h1>
-
+              <div className="w-full min-h-screen bg-gradient-to-br from-black via-gray-900 to-black py-20 relative z-[8]">
+                {/* Hero Section */}
+                <div className="text-center mb-16">
+                  <div className="inline-block mb-8">
+                    <div className="w-24 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto mb-6"></div>
+                    <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent" style={{ fontFamily: 'Arial, sans-serif' }}>
+                      About IEEE
+                    </h1>
+                    <p className="text-xl text-gray-300 mt-4" style={{ fontFamily: 'Arial, sans-serif' }}>Student Branch SIT Nagpur</p>
+                  </div>
+                  
                   {/* Website Credit */}
                   <div className="text-center mb-8">
                     <p className="text-gray-400 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
-                      Website created by <span className="text-blue-400 font-semibold">Jash Chauhan</span>
+                      Website Developed by <span className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors cursor-pointer">Jash Chauhan</span>
                     </p>
                   </div>
+                </div>
 
-                  <div className="text-left space-y-8">
-                    <div className="bg-gray-800 p-8 rounded-lg">
-                      <h2 className="text-3xl mb-6 mt-10 text-xl font-[Helvetica_Now_Display]">Our Mission</h2>
-                      <p className="text-lg leading-relaxed mt-10 text-xl font-[Helvetica_Now_Display]">
-                        The IEEE Student Branch at Symbiosis Institute of Technology, Nagpur, is a dynamic platform dedicated to fostering innovation, technical excellence, and research-driven learning among students. Its primary objectives include promoting knowledge sharing in emerging technologies, facilitating hands-on workshops and projects, and encouraging active participation in research and development initiatives.
-                      </p>
+                <div className="max-w-6xl mx-auto px-6">
+                  {/* Mission & Vision Grid */}
+                  <div className="grid md:grid-cols-2 gap-8 mb-16">
+                    {/* Our Mission TiltedCard */}
+                    <div className="flex justify-center">
+                      <TiltedCard
+                        imageSrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMwMDU5QkMiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDA0N0E2Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+"
+                        altText="Our Mission - IEEE Innovation"
+                        captionText="Our Mission"
+                        containerHeight="400px"
+                        containerWidth="100%"
+                        imageHeight="300px"
+                        imageWidth="100%"
+                        rotateAmplitude={12}
+                        scaleOnHover={1.05}
+                        showMobileWarning={false}
+                        showTooltip={true}
+                        displayOverlayContent={true}
+                        overlayContent={
+                          <div className="p-6 text-white">
+                            <div className="flex items-center mb-4">
+                              <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mr-4">
+                                <i className="ri-rocket-line text-white text-xl"></i>
+                              </div>
+                              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>Our Mission</h2>
+                            </div>
+                            <p className="text-gray-200 leading-relaxed text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
+                              The IEEE Student Branch at Symbiosis Institute of Technology, Nagpur, is a dynamic platform dedicated to fostering innovation, technical excellence, and research-driven learning among students.
+                            </p>
+                          </div>
+                        }
+                      />
                     </div>
 
-                    <div className="bg-gray-800 p-8 rounded-lg">
-                      <h2 className="text-3xl mb-6 mt-10 text-xl font-[Helvetica_Now_Display]">Our Vision</h2>
-                      <p className="text-lg leading-relaxed mt-10 text-xl font-[Helvetica_Now_Display]">
-                        The branch aims to create opportunities for students to collaborate on innovative ideas, publish research papers, and engage with professionals and peers globally. By nurturing technical and professional skills, it empowers members to contribute to technological advancements and research breakthroughs that benefit society.
-                      </p>
+                    {/* Our Vision TiltedCard */}
+                    <div className="flex justify-center">
+                      <TiltedCard
+                        imageSrc="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSJ1cmwoI2dyYWRpZW50KSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM4QjVDQjYiLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjRUM0ODk5Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+"
+                        altText="Our Vision - IEEE Future"
+                        captionText="Our Vision"
+                        containerHeight="400px"
+                        containerWidth="100%"
+                        imageHeight="300px"
+                        imageWidth="100%"
+                        rotateAmplitude={12}
+                        scaleOnHover={1.05}
+                        showMobileWarning={false}
+                        showTooltip={true}
+                        displayOverlayContent={true}
+                        overlayContent={
+                          <div className="p-6 text-white">
+                            <div className="flex items-center mb-4">
+                              <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-4">
+                                <i className="ri-eye-line text-white text-xl"></i>
+                              </div>
+                              <h2 className="text-3xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>Our Vision</h2>
+                            </div>
+                            <p className="text-gray-200 leading-relaxed text-lg" style={{ fontFamily: 'Arial, sans-serif' }}>
+                              To create opportunities for students to collaborate on innovative ideas, publish research papers, and engage with professionals globally.
+                            </p>
+                          </div>
+                        }
+                      />
                     </div>
+                  </div>
 
-                    <div className="bg-gray-800 p-8 rounded-lg">
-                      <h2 className="text-3xl mb-6 mt-10 text-xl font-[Helvetica_Now_Display]">What We Do</h2>
-                      <ul className="text-lg leading-relaxed space-y-4 mt-10 text-xl font-[Helvetica_Now_Display]">
-                        <li>• Organize technical workshops and seminars</li>
-                        <li>• Conduct coding competitions and hackathons</li>
-                        <li>• Facilitate industry interactions and networking</li>
-                        <li>• Promote research and innovation projects</li>
-                        <li>• Provide mentorship and career guidance</li>
-                        <li>• Collaborate with other IEEE chapters and societies</li>
-                      </ul>
+                  {/* What We Do Section */}
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-8 rounded-2xl border border-gray-700/50 mb-16">
+                    <div className="flex items-center mb-8">
+                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-4">
+                        <i className="ri-tools-line text-white text-xl"></i>
+                      </div>
+                      <h2 className="text-3xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>What We Do</h2>
                     </div>
+                    
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {[
+                        { icon: "ri-presentation-line", title: "Technical Workshops", desc: "Hands-on learning sessions" },
+                        { icon: "ri-code-line", title: "Coding Competitions", desc: "Hackathons and coding challenges" },
+                        { icon: "ri-team-line", title: "Industry Networking", desc: "Connect with professionals" },
+                        { icon: "ri-lightbulb-line", title: "Research Projects", desc: "Innovation and development" },
+                        { icon: "ri-user-star-line", title: "Mentorship", desc: "Career guidance and support" },
+                        { icon: "ri-global-line", title: "Global Collaboration", desc: "IEEE chapters worldwide" }
+                      ].map((item, index) => (
+                        <div key={index} className="group bg-gray-700/30 p-6 rounded-xl border border-gray-600/30 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105">
+                          <div className="flex items-center mb-4">
+                            <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center mr-3">
+                              <i className={`${item.icon} text-white text-lg`}></i>
+                            </div>
+                            <h3 className="text-lg font-semibold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>{item.title}</h3>
+                          </div>
+                          <p className="text-gray-400 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>{item.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
 
-                    <div className="bg-gray-800 p-8 rounded-lg">
-                      <h2 className="text-3xl mb-6 mt-10 text-xl font-[Helvetica_Now_Display]">Join Us</h2>
-                      <p className="text-lg leading-relaxed mt-10 text-xl font-[Helvetica_Now_Display]">
-                        Whether you're a first-year student or a senior, there's always a place for you in our IEEE Student Branch. We welcome students from all engineering disciplines who share our passion for technology and innovation. Join us to be part of a community that's shaping the future of engineering.
+                  {/* Stats Section */}
+                  <div className="grid md:grid-cols-4 gap-6 mb-16">
+                    {[
+                      { number: "300+", label: "Active Members" },
+                      { number: "20+", label: "Events Organized" },
+                      { number: "4", label: "Years Active" },
+                      { number: "100%", label: "Student Led" }
+                    ].map((stat, index) => (
+                      <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 text-center hover:scale-105 transition-all duration-300">
+                        <div className="text-3xl font-bold text-cyan-400 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>{stat.number}</div>
+                        <div className="text-gray-300 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Join Us Section */}
+                  <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-lg p-8 rounded-2xl border border-cyan-500/20 text-center">
+                    <div className="max-w-3xl mx-auto">
+                      <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i className="ri-user-add-line text-white text-2xl"></i>
+                      </div>
+                      <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>Join Our Community</h2>
+                      <p className="text-gray-300 text-lg leading-relaxed mb-8" style={{ fontFamily: 'Arial, sans-serif' }}>
+                        Whether you're a first-year student or a senior, there's always a place for you in our IEEE Student Branch. We welcome students from all engineering disciplines who share our passion for technology and innovation.
                       </p>
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button 
+                          onClick={() => navigate('/registration')}
+                          className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+                        >
+                          <i className="ri-user-add-line mr-2"></i>
+                          <span style={{ fontFamily: 'Arial, sans-serif' }}>Join IEEE</span>
+                        </button>
+                        <button 
+                          onClick={() => navigate('/team-chroma')}
+                          className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                        >
+                          <i className="ri-team-line mr-2"></i>
+                          <span style={{ fontFamily: 'Arial, sans-serif' }}>Meet the Team</span>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

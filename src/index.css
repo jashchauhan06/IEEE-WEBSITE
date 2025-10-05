@@ -5,6 +5,17 @@
   src: url("./pricedown.otf");
 }
 
+/* Noto Serif Hebrew Font Class */
+.noto-serif-hebrew {
+  font-family: "Noto Serif Hebrew", serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
 html,
 body {
   width: 100%;

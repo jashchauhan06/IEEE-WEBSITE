@@ -6,6 +6,7 @@ const TeamChroma = () => {
   const ieeeTeam = [
     // Advisor (First Position)
     {
+      image: "/Arya Kashikar.png",
       title: "Arya Kashikar",
       subtitle: "Advisor",
       handle: "@aryakashikar",
@@ -14,7 +15,8 @@ const TeamChroma = () => {
       url: "https://linkedin.com"
     },
     // Leadership Team
-    { // Using existing image
+    {
+      image: "/Parth Choudhari.jpg",
       title: "Parth Choudhari",
       subtitle: "Chair",
       handle: "@parthchoudhari",
@@ -23,6 +25,7 @@ const TeamChroma = () => {
       url: "https://linkedin.com"
     },
     {
+      image: "/Rishabh Thutheja.jpg",
       title: "Rishab Thutheja",
       subtitle: "Vice-Chair",
       handle: "@rishabthutheja",
@@ -31,6 +34,7 @@ const TeamChroma = () => {
       url: "https://linkedin.com"
     },
     {
+      image: "/Rinku Choudhary.jpg",
       title: "Rinku Choudhary",
       subtitle: "Vice-Chair",
       handle: "@rinkuchoudhary",
@@ -47,6 +51,7 @@ const TeamChroma = () => {
       url: "https://linkedin.com"
     },
     {
+      image: "/Atharva Jaiswal.jpg",
       title: "Atharv Jaiswal",
       subtitle: "Treasurer",
       handle: "@atharvjaiswal",
