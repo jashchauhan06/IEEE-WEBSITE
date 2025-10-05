@@ -1700,6 +1700,7 @@ function App({ initialPage = 'home' }) {
                         // Get form data
                         const formData = new FormData(e.target);
                         const registrationData = {
+                          team_name: formData.get('team_name'),
                           leader_name: formData.get('leader_name'),
                           leader_phone: formData.get('leader_phone'),
                           leader_email: formData.get('leader_email'),
@@ -1734,6 +1735,19 @@ function App({ initialPage = 'home' }) {
                           <h2 className="text-2xl font-bold text-white mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Team Information
                           </h2>
+                          
+                          {/* Team Name */}
+                          <div className="mb-8">
+                            <h3 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                              Team Name
+                            </h3>
+                            <div className="grid grid-cols-1 gap-4">
+                              <div>
+                                <label className="block text-sm font-medium text-white mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Team Name *</label>
+                                <input type="text" name="team_name" required className="w-full px-4 py-3 bg-gray-700 border border-gray-600 text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your team name" style={{ fontFamily: 'Arial, sans-serif' }} />
+                              </div>
+                            </div>
+                          </div>
                           
                           {/* Team Leader (Required) */}
                           <div className="mb-8">
