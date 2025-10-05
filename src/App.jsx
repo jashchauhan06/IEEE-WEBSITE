@@ -1933,6 +1933,21 @@ function App({ initialPage = 'home' }) {
                 </div>
 
                 <div className="max-w-6xl mx-auto px-6">
+                  {/* Stats Section */}
+                  <div className="grid md:grid-cols-4 gap-6 mb-16">
+                    {[
+                      { number: "300+", label: "Active Members" },
+                      { number: "20+", label: "Events Organized" },
+                      { number: "4", label: "Years Active" },
+                      { number: "100%", label: "Student Led" }
+                    ].map((stat, index) => (
+                      <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 text-center hover:scale-105 transition-all duration-300">
+                        <div className="text-3xl font-bold text-cyan-400 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>{stat.number}</div>
+                        <div className="text-gray-300 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>{stat.label}</div>
+                      </div>
+                    ))}
+                  </div>
+
                   {/* Mission & Vision Grid */}
                   <div className="grid md:grid-cols-2 gap-8 mb-16">
                     {/* Our Mission TiltedCard */}
@@ -2029,38 +2044,23 @@ function App({ initialPage = 'home' }) {
                     </div>
                   </div>
 
-                  {/* Stats Section */}
-                  <div className="grid md:grid-cols-4 gap-6 mb-16">
-                    {[
-                      { number: "300+", label: "Active Members" },
-                      { number: "20+", label: "Events Organized" },
-                      { number: "4", label: "Years Active" },
-                      { number: "100%", label: "Student Led" }
-                    ].map((stat, index) => (
-                      <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-6 rounded-xl border border-gray-700/50 text-center hover:scale-105 transition-all duration-300">
-                        <div className="text-3xl font-bold text-cyan-400 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>{stat.number}</div>
-                        <div className="text-gray-300 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>{stat.label}</div>
-                      </div>
-                    ))}
-                  </div>
-
                   {/* Join Us Section */}
                   <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-lg p-8 rounded-2xl border border-cyan-500/20 text-center">
                     <div className="max-w-3xl mx-auto">
                       <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i className="ri-user-add-line text-white text-2xl"></i>
                       </div>
-                      <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>Join Our Community</h2>
+                      <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>View Our Community</h2>
                       <p className="text-gray-300 text-lg leading-relaxed mb-8" style={{ fontFamily: 'Arial, sans-serif' }}>
                         Whether you're a first-year student or a senior, there's always a place for you in our IEEE Student Branch. We welcome students from all engineering disciplines who share our passion for technology and innovation.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button 
-                          onClick={() => navigate('/registration')}
+                          onClick={() => navigate('/events')}
                           className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
                         >
-                          <i className="ri-user-add-line mr-2"></i>
-                          <span style={{ fontFamily: 'Arial, sans-serif' }}>Join IEEE</span>
+                          <i className="ri-calendar-event-line mr-2"></i>
+                          <span style={{ fontFamily: 'Arial, sans-serif' }}>View Events</span>
                         </button>
                         <button 
                           onClick={() => navigate('/team-chroma')}
