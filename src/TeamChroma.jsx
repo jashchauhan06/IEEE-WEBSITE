@@ -220,13 +220,6 @@ const TeamChroma = () => {
           />
         </div>
       </div>
-
-      {/* Footer Info */}
-      <div className="text-center py-8 text-gray-400">
-        <p style={{ fontFamily: 'Arial, sans-serif' }}>
-          Hover over the cards to see the interactive spotlight effect
-        </p>
-      </div>
     </div>
   );
 };
