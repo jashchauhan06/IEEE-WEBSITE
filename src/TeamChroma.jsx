@@ -12,7 +12,7 @@ const TeamChroma = () => {
       handle: "@bhupeshdewangan",
       borderColor: "#FF6B35", // Orange for Club Incharge
       gradient: "linear-gradient(180deg, #FF6B35, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/bhupesh-dewangan-ph-d-mieee-051ba6ab/"
     },
     // Leadership Team (Second Row)
     {
@@ -22,7 +22,7 @@ const TeamChroma = () => {
       handle: "@aryakashikar",
       borderColor: "#3B82F6", // Blue for Advisor
       gradient: "linear-gradient(225deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/arya-kashikar-262b17285/"
     },
     {
       image: "/Parth Choudhari.jpg",
@@ -31,7 +31,7 @@ const TeamChroma = () => {
       handle: "@parthchoudhari",
       borderColor: "#EF4444", // Red for Chair
       gradient: "linear-gradient(145deg, #EF4444, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/parth-choudhari-2073a0294/"
     },
     {
       image: "/Rishabh Thutheja.jpg",
@@ -40,7 +40,7 @@ const TeamChroma = () => {
       handle: "@rishabthutheja",
       borderColor: "#8B5CF6", // Purple for Vice-Chair
       gradient: "linear-gradient(180deg, #8B5CF6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/rishab-thutheja-7547b526b/"
     },
     {
       image: "/Rinku Choudhary.jpg",
@@ -49,15 +49,16 @@ const TeamChroma = () => {
       handle: "@rinkuchoudhary",
       borderColor: "#EC4899", // Pink for Vice-Chair
       gradient: "linear-gradient(210deg, #EC4899, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/rinku-choudhary-7251b6293/"
     },
     {
+      image: "/Rahul.jpg",
       title: "Rahul Malani",
       subtitle: "Secretary",
       handle: "@rahulmalani",
       borderColor: "#F59E0B", // Orange for Secretary
       gradient: "linear-gradient(165deg, #F59E0B, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/rahul-malani-693740284/"
     },
     {
       image: "/Atharva Jaiswal.jpg",
@@ -66,7 +67,7 @@ const TeamChroma = () => {
       handle: "@atharvjaiswal",
       borderColor: "#10B981", // Green for Treasurer
       gradient: "linear-gradient(195deg, #10B981, #000)",
-      url: "https://linkedin.com/"
+      url: "https://www.linkedin.com/in/atharv-jaiswal-51a513286/"
     },
     
     // Event Managers
