@@ -72,63 +72,69 @@ const TeamChroma = () => {
     
     // Event Managers
     {
+      image: "/Sanika.jpg",
       title: "Sanika Jumde",
       subtitle: "Event Manager",
       handle: "@sanikajumde",
-      borderColor: "#EAB308", // Yellow for Event Manager
+      borderColor: "#EAB308",  
       gradient: "linear-gradient(145deg, #EAB308, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/sanika-jumde-5baa6528a/"
     },
     {
+      image: "/Falguni.jpg",
       title: "Falguni Rinke",
       subtitle: "Event Manager",
       handle: "@falgunirinke",
-      borderColor: "#EAB308", // Yellow for Event Manager
+      borderColor: "#EAB308",  
       gradient: "linear-gradient(180deg, #EAB308, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/falguni-rinke-4ba9b2352/"
     },
     {
+      image: "/Ojaswini.jpg",
       title: "Ojaswini Thote",
       subtitle: "Event Manager",
       handle: "@ojaswinithote",
-      borderColor: "#EAB308", // Yellow for Event Manager
+      borderColor: "#EAB308",  
       gradient: "linear-gradient(210deg, #EAB308, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/ojaswini-thote-9a5979320/"
     },
     {
       image: "/Jash.jpg",
       title: "Jash Chauhan",
       subtitle: "Event Manager",
       handle: "@jashchauhan",
-      borderColor: "#EAB308", // Yellow for Event Manager
+      borderColor: "#EAB308",  
       gradient: "linear-gradient(165deg, #EAB308, #000)",
       url: "https://linkedin.com/in/jashchauhan06"
     },
     {
+      image: "/Anaya.jpg",
       title: "Anaya Shende",
       subtitle: "Event Manager",
       handle: "@anayashende",
-      borderColor: "#EAB308", // Yellow for Event Manager
+      borderColor: "#EAB308",  
       gradient: "linear-gradient(195deg, #EAB308, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/anaya-shende-148470340/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     {
+      image: "/Pranati.jpg",
       title: "Pranati Tyagi",
       subtitle: "Event Manager",
       handle: "@pranatityagi",
-      borderColor: "#EAB308", // Yellow for Event Manager
+      borderColor: "#EAB308",  
       gradient: "linear-gradient(225deg, #EAB308, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/pranati-tyagi-47a892315/"
     },
     
     // Web Developer
     {
+      image: "/Sushmit.jpg",
       title: "Sushmit Partakke",
       subtitle: "Web Developer",
       handle: "@sushmitpartakke",
       borderColor: "#EC4899", // Pink for Web Developer
       gradient: "linear-gradient(135deg, #EC4899, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/sushmit-partakke-04bb6b2a9/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     
     // Core Members
@@ -139,31 +145,34 @@ const TeamChroma = () => {
       handle: "@jasrajsingh",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(145deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/jasraj-singh-989762347/"
     },
     {
+      image: "/Yash.jpg",
       title: "Yash Khadgi",
       subtitle: "Core Member",
       handle: "@yashkhadgi",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(180deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/yash-khadgi-b6528b314/"
     },
     {
+      image: "/Ayushi.jpg",
       title: "Ayushi Ray",
       subtitle: "Core Member",
       handle: "@ayushiray",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(210deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/ayushi-ray-306979320/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     {
+      image: "/Kashish.jpg",
       title: "Kashish Gupta",
       subtitle: "Core Member",
       handle: "@kashishgupta",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(165deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/kashish-gupta-07981b320/"
     },
     {
       title: "Arya Khandekar",
@@ -179,7 +188,7 @@ const TeamChroma = () => {
       handle: "@tabishmansoori",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(225deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/tabish-shahroz-mansoori-08a235278/"
     },
     {
       image: "/Sunidhi.png",
@@ -188,15 +197,16 @@ const TeamChroma = () => {
       handle: "@sunidhihaware",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(135deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/sunidhi-haware-797a97323/"
     },
     {
+      image: "/Arpita.jpg",
       title: "Arpita Waghmare",
       subtitle: "Core Member",
       handle: "@arpitawaghmare",
       borderColor: "#3B82F6", // Blue for Core Member
       gradient: "linear-gradient(150deg, #3B82F6, #000)",
-      url: "https://linkedin.com"
+      url: "https://www.linkedin.com/in/arpita-waghmare-33a5a6314/"
     }
   ];
 
