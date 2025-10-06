@@ -18,6 +18,8 @@ function App({ initialPage = 'home' }) {
   let [currentPage, setCurrentPage] = useState(initialPage);
   let [selectedEvent, setSelectedEvent] = useState(null);
   let [showMobilePopup, setShowMobilePopup] = useState(false);
+  let [bugBountyRegistered, setBugBountyRegistered] = useState(false);
+  let [vibeCodingRegistered, setVibeCodingRegistered] = useState(false);
 
   // Update currentPage when URL changes
   useEffect(() => {
@@ -68,9 +70,28 @@ function App({ initialPage = 'home' }) {
     }
   }, []);
 
+  // Check registration status when events page loads
+  useEffect(() => {
+    if (currentPage === 'events') {
+      const bugBountyStatus = localStorage.getItem('bug-bounty-registration');
+      const vibeCodingStatus = localStorage.getItem('vibe-coding-registration');
+      
+      setBugBountyRegistered(bugBountyStatus === 'true');
+      setVibeCodingRegistered(vibeCodingStatus === 'true');
+    }
+  }, [currentPage]);
+
   useGSAP(() => {
     // Only run SVG animation on home page
     if (currentPage !== 'home') {
+      setShowSvg(false);
+      setShowContent(true);
+      return;
+    }
+
+    // Check if the target elements exist before animating
+    const maskGroup = document.querySelector(".vi-mask-group");
+    if (!maskGroup) {
       setShowSvg(false);
       setShowContent(true);
       return;
@@ -662,11 +683,16 @@ function App({ initialPage = 'home' }) {
                             <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>CSE</span>
                           </div>
                           <button 
-                            className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg" 
+                            className={`w-full ${
+                              bugBountyRegistered 
+                                ? 'bg-gray-500 cursor-not-allowed' 
+                                : 'bg-red-600 hover:bg-red-700'
+                            } text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg`}
                             style={{ fontFamily: 'Arial, sans-serif' }}
-                            onClick={() => navigate('/bug-bounty-registration')}
+                            onClick={() => !bugBountyRegistered && navigate('/bug-bounty-registration')}
+                            disabled={bugBountyRegistered}
                           >
-                            Register Now
+                            {bugBountyRegistered ? 'Already Registered' : 'Register Now'}
                           </button>
                         </div>
                       </div>
@@ -706,11 +732,16 @@ function App({ initialPage = 'home' }) {
                             <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Competition</span>
                           </div>
                           <button 
-                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg" 
+                            className={`w-full ${
+                              vibeCodingRegistered 
+                                ? 'bg-gray-500 cursor-not-allowed' 
+                                : 'bg-blue-600 hover:bg-blue-700'
+                            } text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg`}
                             style={{ fontFamily: 'Arial, sans-serif' }}
-                            onClick={() => navigate('/vibe-coding-registration')}
+                            onClick={() => !vibeCodingRegistered && navigate('/vibe-coding-registration')}
+                            disabled={vibeCodingRegistered}
                           >
-                            Register Now
+                            {vibeCodingRegistered ? 'Already Registered' : 'Register Now'}
                           </button>
                         </div>
                       </div>

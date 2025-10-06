@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addVibeCodingRegistration } from './supabase';
 
 const VibeCodingRegistration = () => {
   const navigate = useNavigate();
+  const [hasRegistered, setHasRegistered] = useState(false);
+
+  // Check if user has already registered
+  useEffect(() => {
+    const registrationStatus = localStorage.getItem('vibe-coding-registration');
+    if (registrationStatus === 'true') {
+      setHasRegistered(true);
+    }
+  }, []);
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 py-20 relative z-[8]">
@@ -29,6 +38,17 @@ const VibeCodingRegistration = () => {
           <p className="text-lg text-blue-300 mt-2" style={{ fontFamily: 'Arial, sans-serif' }}>
             For First Year Students Only - Team of 2-3 Members (3rd Member Optional)
           </p>
+        </div>
+
+        {/* Event Poster */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="flex justify-center">
+            <img 
+              src="/Bug_Bounty.jpg" 
+              alt="Vibe Coding Challenge Event Poster" 
+              className="w-full max-w-2xl h-auto rounded-2xl shadow-2xl border border-gray-600"
+            />
+          </div>
         </div>
 
         {/* Registration Form */}
@@ -76,6 +96,9 @@ const VibeCodingRegistration = () => {
               const result = await addVibeCodingRegistration(registrationData);
               
               if (result.success) {
+                // Store registration status in localStorage
+                localStorage.setItem('vibe-coding-registration', 'true');
+                setHasRegistered(true);
                 alert('Vibe Coding Challenge registration submitted successfully! We will contact you soon.');
                 navigate('/events');
               } else {
@@ -265,10 +288,15 @@ const VibeCodingRegistration = () => {
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded-lg transition-colors duration-300 text-lg"
+                    disabled={hasRegistered}
+                    className={`${
+                      hasRegistered 
+                        ? 'bg-gray-500 cursor-not-allowed' 
+                        : 'bg-blue-600 hover:bg-blue-700'
+                    } text-white font-bold py-4 px-12 rounded-lg transition-colors duration-300 text-lg`}
                     style={{ fontFamily: 'Arial, sans-serif' }}
                   >
-                    Submit Vibe Coding Registration
+                    {hasRegistered ? 'You Have Already Registered' : 'Submit Vibe Coding Registration'}
                   </button>
                 </div>
               </div>

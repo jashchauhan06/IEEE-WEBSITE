@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addBugBountyRegistration } from './supabase';
 
 const BugBountyRegistration = () => {
   const navigate = useNavigate();
+  const [hasRegistered, setHasRegistered] = useState(false);
+
+  // Check if user has already registered
+  useEffect(() => {
+    const registrationStatus = localStorage.getItem('bug-bounty-registration');
+    if (registrationStatus === 'true') {
+      setHasRegistered(true);
+    }
+  }, []);
 
   return (
     <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-purple-900 py-20 relative z-[8]">
@@ -29,6 +38,17 @@ const BugBountyRegistration = () => {
           <p className="text-lg text-red-300 mt-2" style={{ fontFamily: 'Arial, sans-serif' }}>
             For Second and Third Year Students Only - Team of 2-3 Members (3rd Member Optional)
           </p>
+        </div>
+
+        {/* Event Poster */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="flex justify-center">
+            <img 
+              src="/Bug_Bounty.jpg" 
+              alt="Bug Bounty Hackathon Event Poster" 
+              className="w-full max-w-2xl h-auto rounded-2xl shadow-2xl border border-gray-600"
+            />
+          </div>
         </div>
 
         {/* Registration Form */}
@@ -76,7 +96,10 @@ const BugBountyRegistration = () => {
               const result = await addBugBountyRegistration(registrationData);
               
               if (result.success) {
-                alert('Bug Bounty Hackathon registration submitted successfully! We will contact you soon.');
+                // Store registration status in localStorage
+                localStorage.setItem('bug-bounty-registration', 'true');
+                setHasRegistered(true);
+                alert('Bug Bounty Hackathon registration submitted successfully!');
                 navigate('/events');
               } else {
                 alert('Registration failed. Please try again.');
@@ -245,14 +268,44 @@ const BugBountyRegistration = () => {
                   </div>
                 </div>
 
+                {/* Event Information */}
+                <div className="mb-8 bg-red-900/30 p-6 rounded-lg border border-red-500/30">
+                  <h3 className="text-lg font-semibold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    Event Details
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300" style={{ fontFamily: 'Arial, sans-serif' }}>
+                    <div className="flex items-center gap-2">
+                      <i className="ri-calendar-line text-red-400"></i>
+                      <span><strong>Date:</strong> Tuesday, October 7, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="ri-time-line text-red-400"></i>
+                      <span><strong>Time:</strong> 09:00 AM</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="ri-map-pin-line text-red-400"></i>
+                      <span><strong>Location:</strong> S-02</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <i className="ri-team-line text-red-400"></i>
+                      <span><strong>Format:</strong> Team Competition (2-3 Members)</span>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Submit Button */}
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-12 rounded-lg transition-colors duration-300 text-lg"
+                    disabled={hasRegistered}
+                    className={`${
+                      hasRegistered 
+                        ? 'bg-gray-500 cursor-not-allowed' 
+                        : 'bg-red-600 hover:bg-red-700'
+                    } text-white font-bold py-4 px-12 rounded-lg transition-colors duration-300 text-lg`}
                     style={{ fontFamily: 'Arial, sans-serif' }}
                   >
-                    Submit Bug Bounty Registration
+                    {hasRegistered ? 'You Have Already Registered' : 'Submit Bug Bounty Registration'}
                   </button>
                 </div>
               </div>
