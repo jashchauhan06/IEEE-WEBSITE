@@ -565,7 +565,7 @@ function App({ initialPage = 'home' }) {
                       src="./bg.png"
                       alt=""
                     />
-                    <div style={{ 
+                    <div className="ieee-overlay-text" style={{
                       position: 'absolute', 
                       top: '45%', 
                       left: '50%', 
@@ -844,7 +844,7 @@ function App({ initialPage = 'home' }) {
                                   "Arpita Waghmare"
                                 ],
                                 category: "Technical",
-                                organizer: "IEEE",
+                                organizer: "IEEE Student Branch",
                                 target: "1st Year",
                                 description: "Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.",
                                 status: "Completed"
