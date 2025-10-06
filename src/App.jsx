@@ -8,6 +8,7 @@ import TeamChroma from './TeamChroma';
 import TiltedCard from './TiltedCard';
 import BugBountyRegistration from './BugBountyRegistration';
 import VibeCodingRegistration from './VibeCodingRegistration';
+import CountdownTimer from './components/CountdownTimer';
 
 function App({ initialPage = 'home' }) {
   const navigate = useNavigate();
@@ -682,6 +683,15 @@ function App({ initialPage = 'home' }) {
                             <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Bug Bounty</span>
                             <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>CSE</span>
                           </div>
+                          
+                          {/* Countdown Timer */}
+                          <div className="mb-4">
+                            <CountdownTimer 
+                              targetDate="2025-10-07T09:00:00" 
+                              eventName="Bug Bounty Hackathon"
+                              baseColorClass="red"
+                            />
+                          </div>
                           <button 
                             className={`w-full ${
                               bugBountyRegistered 
@@ -730,6 +740,15 @@ function App({ initialPage = 'home' }) {
                             <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Problem Solving</span>
                             <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Development</span>
                             <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Competition</span>
+                          </div>
+                          
+                          {/* Countdown Timer */}
+                          <div className="mb-4">
+                            <CountdownTimer 
+                              targetDate="2025-10-07T09:00:00" 
+                              eventName="Vibe Coding Challenge"
+                              baseColorClass="blue"
+                            />
                           </div>
                           <button 
                             className={`w-full ${
