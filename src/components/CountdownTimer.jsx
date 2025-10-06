@@ -81,33 +81,33 @@ const CountdownTimer = ({ targetDate, eventName, baseColorClass }) => {
           ⏰ Time Until {eventName}
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-3 text-center">
-        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-3 shadow-lg ${borderColor}`}>
-          <div className="text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 text-center">
+        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-2 md:p-3 shadow-lg ${borderColor}`}>
+          <div className="text-lg md:text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
             {timeLeft.days}
           </div>
           <div className={`text-xs ${textColor} font-medium`} style={{ fontFamily: 'Arial, sans-serif' }}>
             Days
           </div>
         </div>
-        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-3 shadow-lg ${borderColor}`}>
-          <div className="text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-2 md:p-3 shadow-lg ${borderColor}`}>
+          <div className="text-lg md:text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
             {timeLeft.hours}
           </div>
           <div className={`text-xs ${textColor} font-medium`} style={{ fontFamily: 'Arial, sans-serif' }}>
             Hours
           </div>
         </div>
-        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-3 shadow-lg ${borderColor}`}>
-          <div className="text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-2 md:p-3 shadow-lg ${borderColor}`}>
+          <div className="text-lg md:text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
             {timeLeft.minutes}
           </div>
           <div className={`text-xs ${textColor} font-medium`} style={{ fontFamily: 'Arial, sans-serif' }}>
             Minutes
           </div>
         </div>
-        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-3 shadow-lg ${borderColor}`}>
-          <div className="text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
+        <div className={`bg-gradient-to-br ${bgGradient} rounded-lg p-2 md:p-3 shadow-lg ${borderColor}`}>
+          <div className="text-lg md:text-xl font-bold text-white" style={{ fontFamily: 'Arial, sans-serif' }}>
             {timeLeft.seconds}
           </div>
           <div className={`text-xs ${textColor} font-medium`} style={{ fontFamily: 'Arial, sans-serif' }}>
