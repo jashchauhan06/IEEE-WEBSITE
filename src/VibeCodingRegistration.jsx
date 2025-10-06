@@ -252,7 +252,7 @@ const VibeCodingRegistration = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <i className="ri-map-pin-line text-blue-400"></i>
-                      <span><strong>Location:</strong> S-02 & S-08</span>
+                      <span><strong>Location:</strong>S-08</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <i className="ri-team-line text-blue-400"></i>

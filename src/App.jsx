@@ -642,18 +642,18 @@ function App({ initialPage = 'home' }) {
                           <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 7, 2025</span>
                             <span className="flex items-center gap-1"><i className="ri-time-line"></i>9:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02</span>
                           </div>
                         </div>
                         <div className="p-6">
                           <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Bug Bounty Hackathon</h4>
                           <p className="text-gray-600 mb-4 leading-relaxed font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            A unique coding event blending hackathon and bug bounty challenges. First-year students participate in coding competitions, while advanced students tackle real-world debugging, fixing, and optimizing codebases.
+                            A unique coding event blending hackathon and bug bounty challenges. Second and Third year students participate in coding competitions, while advanced students tackle real-world debugging, fixing, and optimizing codebases.
                           </p>
                           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, October 7, 2025</span>
                             <span className="flex items-center gap-1"><i className="ri-time-line"></i> 09:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02</span>
                           </div>
                           <div className="flex flex-wrap gap-2 mb-4">
                             <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Hackathon</span>
@@ -686,7 +686,7 @@ function App({ initialPage = 'home' }) {
                           <div className="flex items-center gap-4 mt-4 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 07, 2025</span>
                             <span className="flex items-center gap-1"><i className="ri-time-line"></i> 9:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-08</span>
                           </div>
                         </div>
                         <div className="p-6">
@@ -697,7 +697,7 @@ function App({ initialPage = 'home' }) {
                           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, October 07, 2025</span>
                             <span className="flex items-center gap-1"><i className="ri-time-line"></i> 09:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i>S-08</span>
                           </div>
                           <div className="flex flex-wrap gap-2 mb-4">
                             <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Programming</span>
