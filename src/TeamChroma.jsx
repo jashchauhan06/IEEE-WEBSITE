@@ -15,6 +15,15 @@ const TeamChroma = () => {
     },
     // Leadership Team (Second Row)
     {
+      image: "/Arya Kashikar.png",
+      title: "Arya Kashikar",
+      subtitle: "Advisor",
+      handle: "@aryakashikar",
+      borderColor: "#3B82F6", // Blue for Advisor
+      gradient: "linear-gradient(225deg, #3B82F6, #000)",
+      url: "https://linkedin.com"
+    },
+    {
       image: "/Parth Choudhari.jpg",
       title: "Parth Choudhari",
       subtitle: "Chair",
@@ -30,15 +39,6 @@ const TeamChroma = () => {
       handle: "@rishabthutheja",
       borderColor: "#8B5CF6", // Purple for Vice-Chair
       gradient: "linear-gradient(180deg, #8B5CF6, #000)",
-      url: "https://linkedin.com"
-    },
-    {
-      image: "/Arya Kashikar.png",
-      title: "Arya Kashikar",
-      subtitle: "Advisor",
-      handle: "@aryakashikar",
-      borderColor: "#3B82F6", // Blue for Advisor
-      gradient: "linear-gradient(225deg, #3B82F6, #000)",
       url: "https://linkedin.com"
     },
     {
