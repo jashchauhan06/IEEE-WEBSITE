@@ -18,6 +18,14 @@
   --r: 220px;
 }
 
+/* Special styling for first card to center it and span all columns */
+.chroma-grid .chroma-card:first-child {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-left: 34.5%; 
+  max-width: 320px;
+}
+
 @media (max-width: 1124px) {
   .chroma-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

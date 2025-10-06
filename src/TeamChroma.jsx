@@ -4,17 +4,16 @@ import ChromaGrid from './ChromaGrid';
 const TeamChroma = () => {
   // IEEE Team data with complete hierarchy and all members
   const ieeeTeam = [
-    // Advisor (First Position)
+    // Club Incharge (First Position - Center Only)
     {
-      image: "/Arya Kashikar.png",
-      title: "Arya Kashikar",
-      subtitle: "Advisor",
-      handle: "@aryakashikar",
-      borderColor: "#3B82F6", // Blue for Advisor
-      gradient: "linear-gradient(225deg, #3B82F6, #000)",
+      title: "Dr. Bhupesh Dewangan",
+      subtitle: "Club Incharge",
+      handle: "@bhupeshdewangan",
+      borderColor: "#FF6B35", // Orange for Club Incharge
+      gradient: "linear-gradient(180deg, #FF6B35, #000)",
       url: "https://linkedin.com"
     },
-    // Leadership Team
+    // Leadership Team (Second Row)
     {
       image: "/Parth Choudhari.jpg",
       title: "Parth Choudhari",
@@ -31,6 +30,15 @@ const TeamChroma = () => {
       handle: "@rishabthutheja",
       borderColor: "#8B5CF6", // Purple for Vice-Chair
       gradient: "linear-gradient(180deg, #8B5CF6, #000)",
+      url: "https://linkedin.com"
+    },
+    {
+      image: "/Arya Kashikar.png",
+      title: "Arya Kashikar",
+      subtitle: "Advisor",
+      handle: "@aryakashikar",
+      borderColor: "#3B82F6", // Blue for Advisor
+      gradient: "linear-gradient(225deg, #3B82F6, #000)",
       url: "https://linkedin.com"
     },
     {
@@ -214,6 +222,8 @@ const TeamChroma = () => {
           <ChromaGrid 
             items={ieeeTeam}
             radius={300}
+            columns={3}
+            rows={Math.ceil(ieeeTeam.length / 3)}
             damping={0.45}
             fadeOut={0.6}
             ease="power3.out"
