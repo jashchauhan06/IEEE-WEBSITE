@@ -6,6 +6,7 @@ const TeamChroma = () => {
   const ieeeTeam = [
     // Club Incharge (First Position - Center Only)
     {
+      image: "/Bhupesh.png",
       title: "Dr. Bhupesh Dewangan",
       subtitle: "Club Incharge",
       handle: "@bhupeshdewangan",
@@ -180,6 +181,7 @@ const TeamChroma = () => {
       url: "https://linkedin.com"
     },
     {
+      image: "/Sunidhi.png",
       title: "Sunidhi Haware",
       subtitle: "Core Member",
       handle: "@sunidhihaware",
