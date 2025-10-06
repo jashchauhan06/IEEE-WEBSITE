@@ -6,12 +6,15 @@ import { addRegistration } from './supabase';
 import { useNavigate, useLocation } from 'react-router-dom';
 import TeamChroma from './TeamChroma';
 import TiltedCard from './TiltedCard';
+import BugBountyRegistration from './BugBountyRegistration';
+import VibeCodingRegistration from './VibeCodingRegistration';
 
 function App({ initialPage = 'home' }) {
   const navigate = useNavigate();
   const location = useLocation();
   
   let [showContent, setShowContent] = useState(false);
+  let [showSvg, setShowSvg] = useState(true);
   let [currentPage, setCurrentPage] = useState(initialPage);
   let [selectedEvent, setSelectedEvent] = useState(null);
   let [showMobilePopup, setShowMobilePopup] = useState(false);
@@ -38,6 +41,12 @@ function App({ initialPage = 'home' }) {
       case '/registration':
         setCurrentPage('registration');
         break;
+      case '/bug-bounty-registration':
+        setCurrentPage('bug-bounty-registration');
+        break;
+      case '/vibe-coding-registration':
+        setCurrentPage('vibe-coding-registration');
+        break;
       case '/event-details':
         setCurrentPage('event-details');
         break;
@@ -60,6 +69,13 @@ function App({ initialPage = 'home' }) {
   }, []);
 
   useGSAP(() => {
+    // Only run SVG animation on home page
+    if (currentPage !== 'home') {
+      setShowSvg(false);
+      setShowContent(true);
+      return;
+    }
+
     const tl = gsap.timeline();
 
     tl.to(".vi-mask-group", {
@@ -76,25 +92,16 @@ function App({ initialPage = 'home' }) {
       opacity: 0,
       onUpdate: function () {
         if (this.progress() >= 0.9) {
-          const svgElement = document.querySelector(".svg");
-          if (svgElement) {
-            svgElement.remove();
-          }
+          setShowSvg(false);
           setShowContent(true);
           this.kill();
         }
       },
     });
-  });
+  }, [currentPage]);
 
   useGSAP(() => {
     if (!showContent) return;
-
-    // Ensure loading screen is removed when content shows
-    const svgElement = document.querySelector(".svg");
-    if (svgElement) {
-      svgElement.remove();
-    }
 
     gsap.to(".main", {
       scale: 1,
@@ -103,17 +110,18 @@ function App({ initialPage = 'home' }) {
       ease: "Expo.easeInOut",
     });
 
-
-
-    gsap.to(".character", {
-      scale: 1.0,
-      x: "-50%",
-      bottom: "-60%",
-      duration: 2,
-      delay: "-.8",
-      ease: "Expo.easeInOut",
-    });
-
+    // Only animate character if it exists (home page only)
+    const characterElement = document.querySelector(".character");
+    if (characterElement) {
+      gsap.to(".character", {
+        scale: 1.0,
+        x: "-50%",
+        bottom: "-60%",
+        duration: 2,
+        delay: "-.8",
+        ease: "Expo.easeInOut",
+      });
+    }
 
     const main = document.querySelector(".main");
 
@@ -124,7 +132,8 @@ function App({ initialPage = 'home' }) {
 
   return (
     <>
-      <div className="svg flex items-center justify-center fixed top-0 left-0 z-[10] w-full h-screen overflow-hidden bg-[#000]">
+      {showSvg && (
+        <div className="svg flex items-center justify-center fixed top-0 left-0 z-[10] w-full h-screen overflow-hidden bg-[#000]">
         <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
           <defs>
             <mask id="viMask">
@@ -152,7 +161,8 @@ function App({ initialPage = 'home' }) {
             mask="url(#viMask)"
           />
         </svg>
-      </div>
+        </div>
+      )}
       {showContent && (
         <div className="main w-full">
           {/* Navigation Bar */}
@@ -628,10 +638,10 @@ function App({ initialPage = 'home' }) {
                             </div>
                           </div>
                           <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>BUG BOUNTY HACKATHON</h3>
-                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE DAY EVENT</p>
+                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>For Second and Third Year Students</p>
                           <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 7, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 10:00 AM - 4:00 PM</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i>9:00 AM</span>
                             <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
                           </div>
                         </div>
@@ -642,7 +652,7 @@ function App({ initialPage = 'home' }) {
                           </p>
                           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, October 7, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 10:00 AM - 04:00 PM</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 09:00 AM</span>
                             <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
                           </div>
                           <div className="flex flex-wrap gap-2 mb-4">
@@ -654,7 +664,7 @@ function App({ initialPage = 'home' }) {
                           <button 
                             className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg" 
                             style={{ fontFamily: 'Arial, sans-serif' }}
-                            onClick={() => navigate('/registration')}
+                            onClick={() => navigate('/bug-bounty-registration')}
                           >
                             Register Now
                           </button>
@@ -667,36 +677,40 @@ function App({ initialPage = 'home' }) {
                           <div className="flex justify-between items-start mb-4">
                             <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE STUDENT BRANCH PRESENTS</div>
                             <div className="text-right">
-                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>15 OCT</div>
+                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>07 OCT</div>
                               <div className="text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
                             </div>
                           </div>
-                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>SALESFORCE WORKSHOP</h3>
-                          <p className="text-lg opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>LEARN. BUILD. DEPLOY.</p>
+                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>VIBE COADING CHALLENGE</h3>
+                          <p className="text-lg opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>For First Year Students Only</p>
                           <div className="flex items-center gap-4 mt-4 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 15, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 2:00 PM - 5:00 PM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> SO-8 & SO-2</span>
+                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 07, 2025</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 9:00 AM</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
                           </div>
                         </div>
                         <div className="p-6">
-                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Salesforce for the Future: Skills that Matter</h4>
+                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Coding Challenge</h4>
                           <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            Master the Salesforce platform and develop essential skills for the future! Learn about CRM, cloud computing, automation, and how to build scalable business solutions that matter in today's digital world.
+                            Join us for an exciting coding challenge that combines problem-solving with hands-on development! Test your programming skills, learn new technologies, and build innovative solutions in a competitive yet collaborative environment.
                           </p>
                           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, April 15, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 02:00 PM - 05:00 PM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> SO-8 & SO-2</span>
+                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, October 07, 2025</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 09:00 AM</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
                           </div>
                           <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Salesforce</span>
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>CRM</span>
-                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Cloud Computing</span>
-                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Automation</span>
+                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Programming</span>
+                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Problem Solving</span>
+                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Development</span>
+                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Competition</span>
                           </div>
-                          <button className="w-full bg-gray-400 text-gray-600 font-bold py-3 px-6 rounded-lg cursor-not-allowed text-lg" style={{ fontFamily: 'Arial, sans-serif' }} disabled>
-                            Registration Not Open Yet
+                          <button 
+                            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg" 
+                            style={{ fontFamily: 'Arial, sans-serif' }}
+                            onClick={() => navigate('/vibe-coding-registration')}
+                          >
+                            Register Now
                           </button>
                         </div>
                       </div>
@@ -1923,6 +1937,16 @@ function App({ initialPage = 'home' }) {
             {/* Team ChromaGrid Page */}
             {currentPage === 'team-chroma' && (
               <TeamChroma />
+            )}
+
+            {/* Bug Bounty Registration Page */}
+            {currentPage === 'bug-bounty-registration' && (
+              <BugBountyRegistration />
+            )}
+
+            {/* Vibe Coding Registration Page */}
+            {currentPage === 'vibe-coding-registration' && (
+              <VibeCodingRegistration />
             )}
 
             {/* About Page */}

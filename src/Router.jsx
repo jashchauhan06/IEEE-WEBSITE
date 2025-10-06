@@ -24,6 +24,12 @@ const AppRouter = () => {
         {/* Registration page */}
         <Route path="/registration" element={<App initialPage="registration" />} />
         
+        {/* Bug Bounty Registration page */}
+        <Route path="/bug-bounty-registration" element={<App initialPage="bug-bounty-registration" />} />
+        
+        {/* Vibe Coding Registration page */}
+        <Route path="/vibe-coding-registration" element={<App initialPage="vibe-coding-registration" />} />
+        
         {/* Event details page */}
         <Route path="/event-details" element={<App initialPage="event-details" />} />
         

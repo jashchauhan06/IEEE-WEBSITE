@@ -5,7 +5,21 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://wkqgbykptfdejezirucb.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndrcWdieWtwdGZkZWplemlydWNiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1OTQ4NzcsImV4cCI6MjA3NTE3MDg3N30.ciyzwGgiVWw_mpA06H_h-Nd9UN2jnN8a_MR9GvtiBGE'
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+// Create a singleton instance to prevent multiple GoTrueClient instances
+let supabaseInstance = null;
+
+export const supabase = (() => {
+  if (!supabaseInstance) {
+    supabaseInstance = createClient(supabaseUrl, supabaseKey, {
+      auth: {
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: false
+      }
+    });
+  }
+  return supabaseInstance;
+})();
 
 // Database functions for registration
 export const addRegistration = async (registrationData) => {
@@ -18,6 +32,36 @@ export const addRegistration = async (registrationData) => {
     return { success: true, data }
   } catch (error) {
     console.error('Error adding registration:', error)
+    return { success: false, error: error.message }
+  }
+}
+
+// Database functions for Bug Bounty Hackathon registration
+export const addBugBountyRegistration = async (registrationData) => {
+  try {
+    const { data, error } = await supabase
+      .from('bug_bounty_registrations')
+      .insert([registrationData])
+    
+    if (error) throw error
+    return { success: true, data }
+  } catch (error) {
+    console.error('Error adding bug bounty registration:', error)
+    return { success: false, error: error.message }
+  }
+}
+
+// Database functions for Vibe Coding Challenge registration
+export const addVibeCodingRegistration = async (registrationData) => {
+  try {
+    const { data, error } = await supabase
+      .from('vibe_coding_challenge_registrations')
+      .insert([registrationData])
+    
+    if (error) throw error
+    return { success: true, data }
+  } catch (error) {
+    console.error('Error adding vibe coding registration:', error)
     return { success: false, error: error.message }
   }
 }
