@@ -386,92 +386,243 @@ function App({ initialPage = 'home' }) {
                   <div className="lg:col-span-2">
                     <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8">
                       <h2 className="text-3xl font-bold text-gray-800 mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        Event Report: Tech Escape 2.0
+                        Event Report: {selectedEvent.name}
                       </h2>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                        <div>
-                          <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Information</h3>
-                          <div className="space-y-2 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <p><strong>Title:</strong> Tech Escape 2.0</p>
-                            <p><strong>Duration:</strong> 01 Day</p>
-                            <p><strong>Date:</strong> 14/08/25</p>
-                            <p><strong>Mode:</strong> Offline</p>
-                            <p><strong>Department:</strong> Computer Science and Engineering, SIT Nagpur</p>
-                            <p><strong>Organizing Cell:</strong> IEEE Student Branch, SIT Nagpur</p>
+                      {/* Tech Escape 2.0 Report */}
+                      {selectedEvent.name === "Tech Escape 2.0" && (
+                        <>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                              <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Information</h3>
+                              <div className="space-y-2 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <p><strong>Title:</strong> Tech Escape 2.0</p>
+                                <p><strong>Duration:</strong> 01 Day</p>
+                                <p><strong>Date:</strong> 14/08/25</p>
+                                <p><strong>Mode:</strong> Offline</p>
+                                <p><strong>Department:</strong> Computer Science and Engineering, SIT Nagpur</p>
+                                <p><strong>Organizing Cell:</strong> IEEE Student Branch, SIT Nagpur</p>
+                              </div>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Organizing Committee</h3>
+                              <div className="space-y-2 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <p><strong>Faculty Coordinator:</strong> Dr. Bhupesh Dewangan</p>
+                                <p><strong>SRC Coordinator:</strong> Dr. Snehlata Wankhade</p>
+                                <p><strong>IEEE Chair:</strong> Parth Choudhari</p>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Organizing Committee</h3>
-                          <div className="space-y-2 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <p><strong>Faculty Coordinator:</strong> Dr. Bhupesh Dewangan</p>
-                            <p><strong>SRC Coordinator:</strong> Dr. Snehlata Wankhade</p>
-                            <p><strong>IEEE Chair:</strong> Parth Choudhari</p>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Objectives</h3>
+                          <ul className="list-disc list-inside space-y-2 mb-6 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <li>Encourage teamwork, communication, and logical problem-solving through gamified activities</li>
+                            <li>Provide an engaging, hands-on experience that combines digital puzzles with physical exploration</li>
+                            <li>Promote student participation, leadership, and decision-making in a fun environment</li>
+                            <li>Foster a spirit of inclusiveness and unity among students of diverse backgrounds</li>
+                            <li>Challenge attendees to think critically and solve cybersecurity challenges</li>
+                          </ul>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Description</h3>
+                          <p className="text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            Tech Escape was an exciting and adventurous two-hour event conducted by the IEEE Student Branch, SIT Nagpur, in rooms S08 and S02.
+                            The event comprised three rounds designed to test participants' problem-solving, logical thinking, and teamwork abilities.
+                          </p>
+                          <ol className="list-decimal list-inside space-y-2 mb-6 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <li>The first round was a capture-the-flag style online puzzle challenge, where teams solved riddles to unlock clues</li>
+                            <li>In the second round, students raced to collect puzzle pieces forming the IEEE logo, with only the first 10 teams progressing to the finale</li>
+                            <li>The final round took participants across the SIU campus in search of the winning bike among decoys</li>
+                            <li>The team that successfully solved the final riddle and blew the horn at the correct location was declared the winner</li>
+                          </ol>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Participation Statistics</h3>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                            <div className="bg-blue-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Arial, sans-serif' }}>140+</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Students</div>
+                            </div>
+                            <div className="bg-green-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-green-600" style={{ fontFamily: 'Arial, sans-serif' }}>25</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Volunteers</div>
+                            </div>
+                            <div className="bg-purple-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-purple-600" style={{ fontFamily: 'Arial, sans-serif' }}>2</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Teaching Staff</div>
+                            </div>
+                            <div className="bg-orange-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-orange-600" style={{ fontFamily: 'Arial, sans-serif' }}>168</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Total</div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
 
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Objectives</h3>
-                      <ul className="list-disc list-inside space-y-2 mb-6 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        <li>Encourage teamwork, communication, and logical problem-solving through gamified activities</li>
-                        <li>Provide an engaging, hands-on experience that combines digital puzzles with physical exploration</li>
-                        <li>Promote student participation, leadership, and decision-making in a fun environment</li>
-                        <li>Foster a spirit of inclusiveness and unity among students of diverse backgrounds</li>
-                        <li>Challenge attendees to think critically and solve cybersecurity challenges</li>
-                      </ul>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Achieved Outcomes</h3>
+                          <p className="text-lg text-gray-600 leading-relaxed mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            The Tech Escape event successfully engaged students in an innovative blend of digital and on-campus challenges, fulfilling its objectives of fostering teamwork, problem-solving, and decision-making skills. Students improved their ability to work collaboratively under time constraints, communicated effectively to solve puzzles, and explored the campus in an enjoyable way.
+                          </p>
 
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Description</h3>
-                      <p className="text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        Tech Escape was an exciting and adventurous two-hour event conducted by the IEEE Student Branch, SIT Nagpur, in rooms S08 and S02.
-                        The event comprised three rounds designed to test participants' problem-solving, logical thinking, and teamwork abilities.
-                      </p>
-                      <ol className="list-decimal list-inside space-y-2 mb-6 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        <li>The first round was a capture-the-flag style online puzzle challenge, where teams solved riddles to unlock clues</li>
-                        <li>In the second round, students raced to collect puzzle pieces forming the IEEE logo, with only the first 10 teams progressing to the finale</li>
-                        <li>The final round took participants across the SIU campus in search of the winning bike among decoys</li>
-                        <li>The team that successfully solved the final riddle and blew the horn at the correct location was declared the winner</li>
-                      </ol>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Winners</h3>
+                          <div className="space-y-3 mb-6">
+                            <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                              <div className="font-bold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>🥇 1st Place: Team Cloud9</div>
+                              <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Vineet Gadhwal, Tejas Mahurkar, Samaira Kale, Khushi Agrawal</div>
+                            </div>
+                            <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
+                              <div className="font-bold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>🥈 2nd Place: Team De-Coders</div>
+                              <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Ansh sonkusare, Shreyansh jadhao, Vardhini aswar, Anushka sarode</div>
+                            </div>
+                            <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">
+                              <div className="font-bold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>🥉 3rd Place: Team Vault Breakers</div>
+                              <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Shruti Kale, Keyuri Buddhe, Anvita Kulkarni, Savani Kulkarni</div>
+                            </div>
+                          </div>
+                        </>
+                      )}
 
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Participation Statistics</h3>
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                        <div className="bg-blue-50 p-4 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Arial, sans-serif' }}>140+</div>
-                          <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Students</div>
-                        </div>
-                        <div className="bg-green-50 p-4 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-green-600" style={{ fontFamily: 'Arial, sans-serif' }}>25</div>
-                          <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Volunteers</div>
-                        </div>
-                        <div className="bg-purple-50 p-4 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-purple-600" style={{ fontFamily: 'Arial, sans-serif' }}>2</div>
-                          <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Teaching Staff</div>
-                        </div>
-                        <div className="bg-orange-50 p-4 rounded-lg text-center">
-                          <div className="text-2xl font-bold text-orange-600" style={{ fontFamily: 'Arial, sans-serif' }}>168</div>
-                          <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Total</div>
-                        </div>
-                      </div>
 
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Achieved Outcomes</h3>
-                      <p className="text-lg text-gray-600 leading-relaxed mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
-                        The Tech Escape event successfully engaged students in an innovative blend of digital and on-campus challenges, fulfilling its objectives of fostering teamwork, problem-solving, and decision-making skills. Students improved their ability to work collaboratively under time constraints, communicated effectively to solve puzzles, and explored the campus in an enjoyable way.
-                      </p>
+                      {/* Vibe Coding Challenge Report */}
+                      {selectedEvent.name === "Vibe Coding Challenge" && (
+                        <>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div>
+                              <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Information</h3>
+                              <div className="space-y-2 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <p><strong>Title:</strong> Vibe Coding</p>
+                                <p><strong>Duration:</strong> 01 Day</p>
+                                <p><strong>Date:</strong> 07/10/25</p>
+                                <p><strong>Mode:</strong> Offline</p>
+                                <p><strong>Department:</strong> Computer Science and Engineering, Symbiosis Institute of Technology, Nagpur</p>
+                                <p><strong>Organizing Cell:</strong> IEEE Student Branch, SIT Nagpur</p>
+                              </div>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Organizing Committee</h3>
+                              <div className="space-y-2 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <p><strong>Faculty Coordinator:</strong> Dr. Bhupesh Dewangan, Faculty Incharge, IEEE Student Branch, SIT Nagpur</p>
+                                <p><strong>SRC Coordinator:</strong> Dr. Snehlata Wankhade, SRC Incharge, SIT Nagpur</p>
+                                <p><strong>Student Coordinator:</strong> Parth Choudhari, Chair, IEEE Student Branch, SIT Nagpur</p>
+                              </div>
+                            </div>
+                          </div>
 
-                      <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Winners</h3>
-                      <div className="space-y-3 mb-6">
-                        <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
-                          <div className="font-bold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>🥇 1st Place: Team Cloud9</div>
-                          <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Vineet Gadhwal, Tejas Mahurkar, Samaira Kale, Khushi Agrawal</div>
-                        </div>
-                        <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
-                          <div className="font-bold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>🥈 2nd Place: Team De-Coders</div>
-                          <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Ansh sonkusare, Shreyansh jadhao, Vardhini aswar, Anushka sarode</div>
-                        </div>
-                        <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">
-                          <div className="font-bold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>🥉 3rd Place: Team Vault Breakers</div>
-                          <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Shruti Kale, Keyuri Buddhe, Anvita Kulkarni, Savani Kulkarni</div>
-                        </div>
-                      </div>
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Objectives</h3>
+                          <ul className="list-disc list-inside space-y-2 mb-6 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <li>Foster Unity and Inclusiveness: To foster a spirit of inclusiveness and unity among students of diverse backgrounds, reinforcing a collective, supportive community</li>
+                            <li>Encourage Core Skills: To encourage teamwork, communication, and logical problem-solving through gamified activities like the coding competition</li>
+                            <li>Promote Participation and Leadership: To promote student participation, leadership, and decision-making in a fun and challenging technical environment</li>
+                            <li>Provide Hands-on Experience: To provide an engaging, hands-on experience that combines digital technical challenges with structured problem-solving</li>
+                            <li>Challenge Critical Thinking: To challenge attendees to think critically and solve technical and algorithmic problems during the competition and interactive sessions</li>
+                          </ul>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Event Description</h3>
+                          <p className="text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            The IEEE Day Celebration, encompassing the formal inauguration, motivational address, and the "Vibe Coding" competition, was conducted as part of the IEEE Day festivities. 
+                            This was the technical segment of the celebration, designed to test the students' problem-solving abilities. Teams of participants were presented with four diverse problem statements 
+                            and given three hours to devise efficient coding solutions.
+                          </p>
+                          <p className="text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            The competition submissions were rigorously evaluated by a dedicated team of six faculty members, ensuring a fair and challenging experience. 
+                            Winners were recognized with prizes, including mice and mouse pads.
+                          </p>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Formal Proceedings</h3>
+                          <div className="space-y-4 mb-6">
+                            <div className="bg-blue-50 p-4 rounded-lg">
+                              <h4 className="font-bold text-gray-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Formal Inauguration</h4>
+                              <p className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                The proceedings were inaugurated by Dr. Nitin Rakesh, Director of SIT Nagpur, who highlighted the importance of professional excellence, 
+                                along with Mr. Will Harris, the distinguished guest, and Dr. Bhupesh, Faculty In-charge of the IEEE Student Chapter.
+                              </p>
+                            </div>
+                            <div className="bg-green-50 p-4 rounded-lg">
+                              <h4 className="font-bold text-gray-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>Motivational Address by Mr. Will Harris</h4>
+                              <p className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                The inaugural session featured a powerful and heartfelt motivational speech by Mr. Will Harris. His address focused entirely on personal betterment 
+                                and growth in life, centered on the principle of unity and community. He passionately discussed the idea that "We Are One," emphasizing the critical 
+                                importance of collaboration, mutual respect, and working together to overcome challenges.
+                              </p>
+                            </div>
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Evaluation Team</h3>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                            <div className="bg-purple-50 p-3 rounded-lg text-center">
+                              <div className="font-semibold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>Dr. Pawan Verma</div>
+                            </div>
+                            <div className="bg-purple-50 p-3 rounded-lg text-center">
+                              <div className="font-semibold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>Dr. Akhil Gupta</div>
+                            </div>
+                            <div className="bg-purple-50 p-3 rounded-lg text-center">
+                              <div className="font-semibold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>Dr. Rashmi Sharma</div>
+                            </div>
+                            <div className="bg-purple-50 p-3 rounded-lg text-center">
+                              <div className="font-semibold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>Dr. Deepak Asudani</div>
+                            </div>
+                            <div className="bg-purple-50 p-3 rounded-lg text-center">
+                              <div className="font-semibold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>Dr. Pradnya Borkar</div>
+                            </div>
+                            <div className="bg-purple-50 p-3 rounded-lg text-center">
+                              <div className="font-semibold text-gray-800" style={{ fontFamily: 'Arial, sans-serif' }}>Dr. Gaurav Londhe</div>
+                            </div>
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Participation Statistics</h3>
+                          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                            <div className="bg-blue-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-blue-600" style={{ fontFamily: 'Arial, sans-serif' }}>125</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Students</div>
+                            </div>
+                            <div className="bg-green-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-green-600" style={{ fontFamily: 'Arial, sans-serif' }}>12</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Volunteers</div>
+                            </div>
+                            <div className="bg-purple-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-purple-600" style={{ fontFamily: 'Arial, sans-serif' }}>6</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Teaching Staff</div>
+                            </div>
+                            <div className="bg-orange-50 p-4 rounded-lg text-center">
+                              <div className="text-2xl font-bold text-orange-600" style={{ fontFamily: 'Arial, sans-serif' }}>144</div>
+                              <div className="text-sm text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>Total</div>
+                            </div>
+                          </div>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Achieved Outcomes</h3>
+                          <p className="text-lg text-gray-600 leading-relaxed mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            The celebrations successfully achieved both inspirational and technical goals:
+                          </p>
+                          <ul className="list-disc list-inside space-y-2 mb-6 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <li><strong>Fostered Unity:</strong> The motivational address effectively inspired a strong spirit of inclusiveness and unity among students</li>
+                            <li><strong>Boosted Morale:</strong> The event provided a significant boost to student morale, encouraging focus on personal growth and positive human values</li>
+                            <li><strong>Enhanced Technical Skills:</strong> The "Vibe Coding" competition promoted teamwork, logical problem-solving, and technical skill development in a challenging environment</li>
+                            <li><strong>Reinforced Commitment:</strong> The involvement of the Director and the faculty evaluation team underscored the institute's commitment to academic rigor and professional body engagement</li>
+                          </ul>
+
+                          <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>Winners</h3>
+                          <div className="space-y-4 mb-6">
+                            <div className="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+                              <h4 className="font-bold text-gray-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>🖱️ Mouse Winners (Teams of 3)</h4>
+                              <div className="space-y-1 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <div><strong>Growth Spark:</strong> Yashwardhan Chourasia, Ved Khode, Bhavik Khobragade</div>
+                                <div><strong>DARKCODE:</strong> Saksham Wadhankar, Pradume Meshram, Om Rai</div>
+                                <div><strong>SparkX:</strong> Shravani Sadawarte, Mahek Malkan, Namrata Vaidya</div>
+                              </div>
+                            </div>
+                            <div className="bg-gray-50 p-4 rounded-lg border-l-4 border-gray-400">
+                              <h4 className="font-bold text-gray-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>🖱️ Mouse Pad Winners (Teams of 3)</h4>
+                              <div className="space-y-1 text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                <div><strong>Code Rockers:</strong> Ojas Morey, Tanay Gulhane, Anurag Mishra</div>
+                                <div><strong>loTech:</strong> Suryansh Pol, Sayed Aaquib Ali, Pranav Dhage</div>
+                                <div><strong>Hello Guys:</strong> Ritika Bhoyar, Esha Hadap, Nandini Durugkar</div>
+                              </div>
+                            </div>
+                            <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-400">
+                              <h4 className="font-bold text-gray-800 mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>🖱️ Mouse Pad Winners (Individuals - Consolation Prizes)</h4>
+                              <div className="text-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>
+                                Rohit Kindarle, Namrata Vaidya, Moksha Kindarle, Lekhit Kalambe, Aarya Mardikar, and Parth Parkhi
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      )}
                       
                       <h3 className="text-2xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
                         Event Details
@@ -501,7 +652,12 @@ function App({ initialPage = 'home' }) {
                   <div className="lg:col-span-1">
                     {/* Event Poster */}
                     <div className="mb-6">
-                      <img src="/Tech_Escape.jpg" alt="Tech Escape 2.0 Event Poster" className="w-full h-auto object-contain rounded-lg shadow-lg" style={{ fontFamily: 'Arial, sans-serif' }} />
+                      <img 
+                        src={selectedEvent.name === "Tech Escape 2.0" ? "/Tech_Escape.jpg" : "/Bug_Bounty.jpg"} 
+                        alt={`${selectedEvent.name} Event Poster`} 
+                        className="w-full h-auto object-contain rounded-lg shadow-lg" 
+                        style={{ fontFamily: 'Arial, sans-serif' }} 
+                      />
                     </div>
 
                     {/* Contacts */}
@@ -648,123 +804,18 @@ function App({ initialPage = 'home' }) {
                       <p className="text-lg text-gray-400" style={{ fontFamily: 'Arial, sans-serif' }}>Don't miss out on these exciting upcoming events</p>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                      {/* Upcoming Event 1 - Bug Bounty Hackathon */}
-                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-red-400 event-card">
-                        <div className="bg-gradient-to-r from-red-600 to-pink-600 p-6 text-white">
-                          <div className="flex justify-between items-start mb-4">
-                            <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE STUDENT BRANCH PRESENTS</div>
-                            <div className="text-right">
-                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>07 OCT</div>
-                              <div className="text-xs font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
-                            </div>
+                    <div className="text-center">
+                      <div className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl mx-auto">
+                        <h3 className="text-3xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>No Upcoming Events</h3>
+                        <p className="text-lg text-gray-600 mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          We're currently planning our next exciting events. Stay tuned for updates!
+                        </p>
+                        <div className="flex justify-center">
+                          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                            <i className="ri-calendar-event-line text-2xl text-white"></i>
                           </div>
-                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>BUG BOUNTY HACKATHON</h3>
-                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>For Second and Third Year Students</p>
-                          <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 7, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i>9:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02</span>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Bug Bounty Hackathon</h4>
-                          <p className="text-gray-600 mb-4 leading-relaxed font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            A unique coding event blending hackathon and bug bounty challenges. Second and Third year students participate in coding competitions, while advanced students tackle real-world debugging, fixing, and optimizing codebases.
-                          </p>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, October 7, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 09:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02</span>
-                          </div>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Hackathon</span>
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Debugging</span>
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Bug Bounty</span>
-                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>CSE</span>
-                          </div>
-                          
-                          {/* Countdown Timer */}
-                          <div className="mb-4">
-                            <CountdownTimer 
-                              targetDate="2025-10-07T09:00:00" 
-                              eventName="Bug Bounty Hackathon"
-                              baseColorClass="red"
-                            />
-                          </div>
-                          <button 
-                            className={`w-full ${
-                              bugBountyRegistered 
-                                ? 'bg-gray-500 cursor-not-allowed' 
-                                : 'bg-red-600 hover:bg-red-700'
-                            } text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg`}
-                            style={{ fontFamily: 'Arial, sans-serif' }}
-                            onClick={() => !bugBountyRegistered && navigate('/bug-bounty-registration')}
-                            disabled={bugBountyRegistered}
-                          >
-                            {bugBountyRegistered ? 'Already Registered' : 'Register Now'}
-                          </button>
                         </div>
                       </div>
-
-                      {/* Upcoming Event 2 - Salesforce Workshop */}
-                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border-2 border-blue-400">
-                        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-6 text-white">
-                          <div className="flex justify-between items-start mb-4">
-                            <div className="bg-white/20 px-3 py-1 rounded-full text-sm font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE STUDENT BRANCH PRESENTS</div>
-                            <div className="text-right">
-                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>07 OCT</div>
-                              <div className="text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
-                            </div>
-                          </div>
-                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>VIBE COADING CHALLENGE</h3>
-                          <p className="text-lg opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>For First Year Students Only</p>
-                          <div className="flex items-center gap-4 mt-4 text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 07, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 9:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-08</span>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Coding Challenge</h4>
-                          <p className="text-gray-600 mb-4 leading-relaxed" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            Join us for an exciting coding challenge that combines problem-solving with hands-on development! Test your programming skills, learn new technologies, and build innovative solutions in a competitive yet collaborative environment.
-                          </p>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Tuesday, October 07, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 09:00 AM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i>S-08</span>
-                          </div>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Programming</span>
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Problem Solving</span>
-                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Development</span>
-                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm" style={{ fontFamily: 'Arial, sans-serif' }}>Competition</span>
-                          </div>
-                          
-                          {/* Countdown Timer */}
-                          <div className="mb-4">
-                            <CountdownTimer 
-                              targetDate="2025-10-07T09:00:00" 
-                              eventName="Vibe Coding Challenge"
-                              baseColorClass="blue"
-                            />
-                          </div>
-                          <button 
-                            className={`w-full ${
-                              vibeCodingRegistered 
-                                ? 'bg-gray-500 cursor-not-allowed' 
-                                : 'bg-blue-600 hover:bg-blue-700'
-                            } text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 text-lg`}
-                            style={{ fontFamily: 'Arial, sans-serif' }}
-                            onClick={() => !vibeCodingRegistered && navigate('/vibe-coding-registration')}
-                            disabled={vibeCodingRegistered}
-                          >
-                            {vibeCodingRegistered ? 'Already Registered' : 'Register Now'}
-                          </button>
-                        </div>
-                      </div>
-
                     </div>
                   </div>
 
@@ -775,9 +826,9 @@ function App({ initialPage = 'home' }) {
                       <p className="text-lg text-gray-400" style={{ fontFamily: 'Arial, sans-serif' }}>Highlights from our previous events</p>
                     </div>
 
-                    <div className="flex justify-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                       {/* Event Card 1 - Tech Escape 2.0 */}
-                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 max-w-md w-full">
+                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
                         <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
                           <div className="flex justify-between items-start mb-4">
                             <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>✓ Event Completed Successfully</div>
@@ -794,15 +845,24 @@ function App({ initialPage = 'home' }) {
                             <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-02 & S-08</span>
                           </div>
                         </div>
-                        <div className="p-6">
+                        <div className="p-6 flex flex-col flex-grow">
                           <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Tech Escape 2.0 - IEEE Event</h4>
-                          <p className="text-gray-600 mb-4 leading-relaxed font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          <p className="text-gray-600 mb-4 leading-relaxed font-medium flex-grow" style={{ fontFamily: 'Arial, sans-serif' }}>
                             Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.
                           </p>
-                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> Thursday, August 14, 2025</span>
-                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 03:00 PM - 04:45 PM</span>
-                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i>S-02 & S-08</span>
+                          <div className="space-y-2 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <div className="flex items-center gap-2">
+                              <i className="ri-calendar-line text-blue-600"></i>
+                              <span>Thursday, August 14, 2025</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <i className="ri-time-line text-blue-600"></i>
+                              <span>03:00 PM - 04:45 PM</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <i className="ri-map-pin-line text-blue-600"></i>
+                              <span>S-02 & S-08</span>
+                            </div>
                           </div>
                           <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-user-line"></i> Parth Choudhari</span>
@@ -847,6 +907,99 @@ function App({ initialPage = 'home' }) {
                                 organizer: "IEEE Student Branch",
                                 target: "1st Year",
                                 description: "Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.",
+                                status: "Completed"
+                              });
+                              navigate('/event-details');
+                            }}
+                            className="bg-blue-100 text-blue-800 px-4 py-2 rounded-lg text-center font-bold hover:bg-blue-200 transition-colors duration-300 w-full" 
+                            style={{ fontFamily: 'Arial, sans-serif' }}
+                          >
+                            View Event Details
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Event Card 2 - Vibe Coding Challenge */}
+                      <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
+                        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-6 text-white">
+                          <div className="flex justify-between items-start mb-4">
+                            <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>✓ Event Completed Successfully</div>
+                            <div className="text-right">
+                              <div className="text-2xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>07 OCT</div>
+                              <div className="text-xs font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
+                            </div>
+                          </div>
+                          <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>VIBE CODING CHALLENGE</h3>
+                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>For First Year Students Only</p>
+                          <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> October 7, 2025</span>
+                            <span className="flex items-center gap-1"><i className="ri-time-line"></i> 9:00 AM - 1:00 PM</span>
+                            <span className="flex items-center gap-1"><i className="ri-map-pin-line"></i> S-08</span>
+                          </div>
+                        </div>
+                        <div className="p-6 flex flex-col flex-grow">
+                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Vibe Coding Challenge</h4>
+                          <p className="text-gray-600 mb-4 leading-relaxed font-medium flex-grow" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            An exciting coding challenge that combined problem-solving with hands-on development! Students tested their programming skills, learned new technologies, and built innovative solutions in a competitive yet collaborative environment.
+                          </p>
+                          <div className="space-y-2 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <div className="flex items-center gap-2">
+                              <i className="ri-calendar-line text-blue-600"></i>
+                              <span>Tuesday, October 7, 2025</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <i className="ri-time-line text-blue-600"></i>
+                              <span>09:00 AM - 01:00 PM</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <i className="ri-map-pin-line text-blue-600"></i>
+                              <span>S-08</span>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-4 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
+                            <span className="flex items-center gap-1"><i className="ri-user-line"></i> IEEE Student Branch</span>
+                          </div>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Programming</span>
+                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Problem Solving</span>
+                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Development</span>
+                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold" style={{ fontFamily: 'Arial, sans-serif' }}>Competition</span>
+                          </div>
+                          <button 
+                            onClick={() => {
+                              setSelectedEvent({
+                                name: "Vibe Coding Challenge",
+                                subtitle: "Code Your Way to Victory!",
+                                date: "October 7, 2025",
+                                time: "9:00 AM - 1:00 PM",
+                                location: "S-08",
+                                day: "Tuesday",
+                                contacts: [
+                                  "Dr. Bhupesh Dewangan",
+                                  "Parth Choudhari", 
+                                  "Rishab Thutheja",
+                                  "Jash Chauhan",
+                                  "Atharv Jaiswal",
+                                  "Rahul Malani",
+                                  "Ojaswini Thote",
+                                  "Sanika Jumde",
+                                  "Falguni Rinke",
+                                  "Anaya Shende",
+                                  "Pranati Tyagi",
+                                  "Sushmit Partakke",
+                                  "Jasraj Singh Ataliya",
+                                  "Yash Khadgi",
+                                  "Ayushi Ray",
+                                  "Kashish Gupta",
+                                  "Arya Khandekar",
+                                  "Tabish Mansoori",
+                                  "Sunidhi Haware",
+                                  "Arpita Waghmare"
+                                ],
+                                category: "Programming",
+                                organizer: "IEEE Student Branch",
+                                target: "1st Year",
+                                description: "An exciting coding challenge that combined problem-solving with hands-on development! Students tested their programming skills, learned new technologies, and built innovative solutions in a competitive yet collaborative environment.",
                                 status: "Completed"
                               });
                               navigate('/event-details');
