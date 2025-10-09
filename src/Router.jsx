@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import App from './App';
+import EventDetails from './EventDetails';
 
 const AppRouter = () => {
   return (
@@ -31,7 +32,7 @@ const AppRouter = () => {
         <Route path="/vibe-coding-registration" element={<App initialPage="vibe-coding-registration" />} />
         
         {/* Event details page */}
-        <Route path="/event-details" element={<App initialPage="event-details" />} />
+        <Route path="/event-details" element={<EventDetails />} />
         
         {/* 404 page */}
         <Route path="/404" element={<App initialPage="404" />} />
