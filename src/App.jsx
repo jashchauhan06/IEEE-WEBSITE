@@ -428,13 +428,13 @@ function App({ initialPage = 'home' }) {
                     </div>
 
                     <div className="text-center">
-                      <div className="bg-white rounded-xl shadow-2xl p-8 max-w-2xl mx-auto">
-                        <h3 className="text-3xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>No Upcoming Events</h3>
-                        <p className="text-lg text-gray-600 mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
+                      <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl shadow-2xl p-8 max-w-2xl mx-auto">
+                        <h3 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'Arial, sans-serif' }}>No Upcoming Events</h3>
+                        <p className="text-lg text-blue-100 mb-6" style={{ fontFamily: 'Arial, sans-serif' }}>
                           We're currently planning our next exciting events. Stay tuned for updates!
                         </p>
                         <div className="flex justify-center">
-                          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                          <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
                             <i className="ri-calendar-event-line text-2xl text-white"></i>
                           </div>
                         </div>
