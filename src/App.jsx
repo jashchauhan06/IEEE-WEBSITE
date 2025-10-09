@@ -461,7 +461,7 @@ function App({ initialPage = 'home' }) {
                             </div>
                           </div>
                           <h3 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Arial, sans-serif' }}>TECH ESCAPE 2.0</h3>
-                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>IEEE EVENT FOR 1ST YEAR</p>
+                          <p className="text-lg font-medium opacity-90" style={{ fontFamily: 'Arial, sans-serif' }}>Hands-On Tech Experience & Innovation Challenge</p>
                           <div className="flex items-center gap-4 mt-4 text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <span className="flex items-center gap-1"><i className="ri-calendar-line"></i> August 14, 2025</span>
                             <span className="flex items-center gap-1"><i className="ri-time-line"></i> 3:00 PM - 4:45 PM</span>
@@ -469,9 +469,9 @@ function App({ initialPage = 'home' }) {
                           </div>
                         </div>
                         <div className="p-6 flex flex-col flex-grow">
-                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Tech Escape 2.0 - IEEE Event</h4>
+                          <h4 className="text-2xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Arial, sans-serif' }}>Tech Escape 2.0</h4>
                           <p className="text-gray-600 mb-4 leading-relaxed font-medium flex-grow" style={{ fontFamily: 'Arial, sans-serif' }}>
-                            Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on experience with cutting-edge technology and innovative problem-solving challenges.
+                            Join us for Tech Escape 2.0, an exciting IEEE event designed specifically for first-year students! This technical event will provide hands-on  experience with cutting-edge technology and innovative problem-solving challenges.
                           </p>
                           <div className="space-y-2 text-sm text-gray-500 mb-4 font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>
                             <div className="flex items-center gap-2">
