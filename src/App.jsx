@@ -353,7 +353,10 @@ function App({ initialPage = 'home' }) {
                         ✓ Event Completed Successfully
                       </div>
                       <div className="text-right">
-                        <div className="text-3xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>14 AUG</div>
+                        <div className="text-3xl font-bold" style={{ fontFamily: 'Arial, sans-serif' }}>
+                          {selectedEvent.name === "Tech Escape 2.0" ? "14 AUG" : 
+                           selectedEvent.name === "Vibe Coding Challenge" ? "07 OCT" : "14 AUG"}
+                        </div>
                         <div className="text-sm font-medium" style={{ fontFamily: 'Arial, sans-serif' }}>2025</div>
                       </div>
                     </div>
