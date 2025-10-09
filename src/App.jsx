@@ -452,7 +452,7 @@ function App({ initialPage = 'home' }) {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
                       {/* Event Card 1 - Tech Escape 2.0 */}
                       <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
-                        <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-6 text-white">
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white">
                           <div className="flex justify-between items-start mb-4">
                             <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>✓ Event Completed Successfully</div>
                             <div className="text-right">
@@ -509,7 +509,7 @@ function App({ initialPage = 'home' }) {
 
                       {/* Event Card 2 - Vibe Coding Challenge */}
                       <div className="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
-                        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 p-6 text-white">
+                        <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white">
                           <div className="flex justify-between items-start mb-4">
                             <div className="bg-white/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>✓ Event Completed Successfully</div>
                             <div className="text-right">

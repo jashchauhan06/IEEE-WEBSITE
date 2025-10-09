@@ -70,7 +70,7 @@ const EventDetails = () => {
 
         {/* Event Header */}
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden mb-8">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-white">
             <div className="flex justify-between items-start mb-6">
               <div className="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold tracking-wide" style={{ fontFamily: 'Arial, sans-serif' }}>
                 ✓ Event Completed Successfully
